@@ -1,1 +1,21 @@
-<p>cv works!</p>
+<div class="wrapper">
+    <div #exportContent class="cv">
+        <div class="section">
+            <div class="section-title">Base Info</div>
+            <app-base-info></app-base-info>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Projects</div>
+            <app-projects></app-projects>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <app-skills></app-skills>
+        </div>
+    </div>
+
+
+    <button class="exportButton" (click)="exportToPDF()">Export to PDF</button>
+</div>
