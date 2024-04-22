@@ -1,0 +1,65 @@
+.wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    
+
+    .title {
+        width: 100%;
+        text-align: center;
+        font-size: 55px;
+        margin-bottom: 50px;
+    }
+
+    .desc {
+        margin-left: 250px;
+        margin-right: 250px;
+        margin-bottom: 50px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 27px;
+    }
+
+    .buttonAndText {
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+
+        .CVButton {
+            width: 275px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 200;
+            letter-spacing: 1px;
+            padding: 13px 20px 13px;
+            outline: 0;
+            border: 1px solid black;
+            cursor: pointer;
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .CVButton:after {
+            content: "";
+            background-color: #a05bc0;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            top: 7px;
+            left: 7px;
+            transition: 0.2s;
+        }
+
+
+        @media (min-width: 768px) {
+            .CVButton {
+                padding: 13px 50px 13px;
+            }
+        }
+    }
+}
