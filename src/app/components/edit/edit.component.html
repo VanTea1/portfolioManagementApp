@@ -1,14 +1,18 @@
 @if (!isEditMode) {
-<div class="flex">
+<div class="relative change-container flex">
   <div>{{ value }}</div>
-  <button (click)="switchEditMode()">
-    <svg width="20" height="20">
+  <button class="hidden" (click)="switchEditMode()">
+    <svg
+      class="absolute right-[-20px] fill-purple-500 top-0 hover:scale-125"
+      width="20"
+      height="20"
+    >
       <use href="./assets/sprite.svg#icon-pencil"></use>
     </svg>
   </button>
 </div>
 }@else{
-<div class="flex">
+<div class="flex relative">
   <input
     type="text"
     class="w-full animate-pulse"
@@ -16,7 +20,11 @@
     (ngModelChange)="onValueChange($event)"
   />
   <button (click)="switchEditMode()">
-    <svg width="20" height="20">
+    <svg
+      class="absolute right-[-20px] fill-purple-500 top-0 hover:scale-125"
+      width="20"
+      height="20"
+    >
       <use href="./assets/sprite.svg#icon-checkmark"></use>
     </svg>
   </button>

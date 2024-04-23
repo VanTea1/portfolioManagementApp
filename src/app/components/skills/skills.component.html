@@ -1,1 +1,59 @@
-<p>skills works!</p>
+<section class="skills-section max-w-[50%]">
+  @for(skill of skills; track $index){
+  <div class="flex justify-between items-center">
+    <app-edit
+      class="text-base w-auto max-w-[70%]"
+      type="text"
+      [(value)]="skills[$index]"
+    ></app-edit>
+    <button (click)="deleteSkill($index)">
+      <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
+        <use href="./assets/sprite.svg#icon-cross"></use>
+      </svg>
+    </button>
+    <div class="flex space-x-1">
+      <label
+        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+      >
+        <input class="hidden" type="checkbox" />
+        <div class="checkmark"></div>
+      </label>
+      <label
+        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+      >
+        <input class="hidden" type="checkbox" />
+        <div class="checkmark"></div>
+      </label>
+      <label
+        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+      >
+        <input class="hidden" type="checkbox" />
+        <div class="checkmark"></div>
+      </label>
+      <label
+        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+      >
+        <input class="hidden" type="checkbox" />
+        <div class="checkmark"></div>
+      </label>
+      <label
+        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+      >
+        <input class="hidden" type="checkbox" />
+        <div class="checkmark"></div>
+      </label>
+      <label
+        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+      >
+        <input class="hidden" type="checkbox" />
+        <div class="checkmark"></div>
+      </label>
+    </div>
+  </div>
+  }
+  <button class="add-skill" (click)="addSkill()">
+    <svg class="fill-purple-500 hover:scale-125" width="20" height="20">
+      <use href="./assets/sprite.svg#icon-plus"></use>
+    </svg>
+  </button>
+</section>

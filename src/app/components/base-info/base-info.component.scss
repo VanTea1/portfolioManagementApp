@@ -3,3 +3,9 @@
   width: 400px;
   word-break: break-word;
 }
+
+.change-btn {
+  &:hover button {
+    @apply flex;
+  }
+}
