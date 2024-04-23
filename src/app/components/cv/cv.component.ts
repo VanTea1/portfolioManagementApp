@@ -4,13 +4,14 @@ import html2canvas from 'html2canvas';
 import { BaseInfoComponent } from "../base-info/base-info.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { SkillsComponent } from "../skills/skills.component";
+import { LayoutsComponent } from "../layouts/layouts.component";
 
 @Component({
     selector: 'app-cv',
     standalone: true,
     templateUrl: './cv.component.html',
     styleUrl: './cv.component.scss',
-    imports: [BaseInfoComponent, ProjectsComponent, SkillsComponent]
+    imports: [BaseInfoComponent, ProjectsComponent, SkillsComponent, LayoutsComponent]
 })
 export class CVComponent implements AfterViewInit {
 
