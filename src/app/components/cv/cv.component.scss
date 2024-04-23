@@ -8,15 +8,18 @@
   margin-top: 10px;
 
   .layoutsWrapper {
-    background-color: #333;
+    background-color: #a05bc062;
     width: 350px;
-
-    padding-left: 55px;
-    padding-top: 35px;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 30px;
+    height: 297mm;
+    
     .layoutChoices {
-  
+
       .layout-title {
         font-size: 30px;
+
       }
       .layouts{
         font-size: 20px;
@@ -25,7 +28,10 @@
   }
 
 
-
+.buttons{
+  margin-right: auto;
+  margin-top: 450px;
+  position: sticky;
   .exportButton {
 
     height: fit-content;
@@ -57,8 +63,8 @@
     left: 7px;
     transition: 0.2s;
   }
-
-
+}
+ 
   .cv {
     width: 210mm;
     height: 297mm;
@@ -68,10 +74,10 @@
     font-family: Arial, sans-serif;
     color: #333;
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
+
 
     .section {
       margin-bottom: 20px;
