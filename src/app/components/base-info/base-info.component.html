@@ -1,1 +1,75 @@
-<p>base-info works!</p>
+<section class="">
+  <div class="flex justify-around">
+    <div class="flex flex-col gap-3 max-w-[70%]">
+      <app-edit
+        class="text-3xl font-bold"
+        type="text"
+        [(value)]="userName"
+      ></app-edit>
+      <app-edit
+        class="text-base w-auto"
+        type="text"
+        [(value)]="position"
+      ></app-edit>
+
+      <textarea
+        class="text-area text-xs"
+        type="text"
+        [(value)]="description"
+      ></textarea>
+    </div>
+
+    <div class="flex flex-col gap-2 justify-center">
+      @if(avatarUrl){
+      <img
+        class="w-24 h-24 rounded-full border p-1"
+        [src]="avatarUrl"
+        alt="userAvatar"
+      />
+      }
+      <input
+        type="file"
+        #fileInput
+        style="display: none"
+        (change)="onFileSelected($event)"
+      />
+      <button
+        class="shadow-md rounded-xl p-1 bg-blue-400 text-xs"
+        (click)="fileInput.click()"
+      >
+        Choose photo
+      </button>
+    </div>
+  </div>
+
+  <ul class="flex mt-2 space-x-4 text-xs">
+    <li>
+      <app-edit
+        class="text-base w-auto"
+        type="text"
+        [(value)]="userInfo.mail"
+      ></app-edit>
+    </li>
+    <li>
+      <app-edit
+        class="text-base w-auto"
+        type="text"
+        [(value)]="userInfo.tel"
+      ></app-edit>
+    </li>
+    <li>
+      <app-edit
+        class="text-base w-auto"
+        type="text"
+        [(value)]="userInfo.address"
+      ></app-edit>
+    </li>
+    <li>
+      <app-edit
+        class="text-base w-auto"
+        type="text"
+        [(value)]="userInfo.linkedIn"
+      ></app-edit>
+    </li>
+  </ul>
+</section>
