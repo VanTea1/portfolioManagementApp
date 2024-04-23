@@ -1,32 +1,47 @@
-<section class="">
+<section class="base-info bg-gray-200">
   <div class="flex justify-around">
     <div class="flex flex-col gap-3 max-w-[70%]">
       <app-edit
-        class="text-3xl font-bold"
+        class="text-xl font-bold max-w-[50%]"
         type="text"
         [(value)]="userName"
       ></app-edit>
       <app-edit
-        class="text-base w-auto"
+        class="text-base w-auto max-w-[70%]"
         type="text"
         [(value)]="position"
       ></app-edit>
 
       <textarea
-        class="text-area text-xs"
+        class="text-area text-xs bg-gray-200"
         type="text"
         [(value)]="description"
       ></textarea>
     </div>
 
-    <div class="flex flex-col gap-2 justify-center">
+    <div class="flex flex-col gap-2 justify-center items-center">
       @if(avatarUrl){
-      <img
-        class="w-24 h-24 rounded-full border p-1"
-        [src]="avatarUrl"
-        alt="userAvatar"
-      />
-      }
+      <div class="change-btn justify-center items-center">
+        <img
+          class="w-28 h-28 rounded-full border p-1"
+          [src]="avatarUrl"
+          alt="userAvatar"
+        />
+        <input
+          type="file"
+          #fileInput
+          style="display: none"
+          (change)="onFileSelected($event)"
+        />
+        <button
+          class="hidden shadow-md p-1 text-white bg-purple-500 text-xs"
+          (click)="fileInput.click()"
+        >
+          Change photo
+        </button>
+      </div>
+      }@else {
+
       <input
         type="file"
         #fileInput
@@ -34,37 +49,50 @@
         (change)="onFileSelected($event)"
       />
       <button
-        class="shadow-md rounded-xl p-1 bg-blue-400 text-xs"
+        class="shadow-md p-1 text-white bg-purple-500 text-xs"
         (click)="fileInput.click()"
       >
         Choose photo
       </button>
+      }
     </div>
   </div>
 
-  <ul class="flex mt-2 space-x-4 text-xs">
-    <li>
+  <ul class="flex justify-around mt-2 gap-3 text-xs bg-gray-300">
+    <li class="flex items-center gap-1">
+      <svg width="20" height="20">
+        <use href="./assets/sprite.svg#icon-envelop"></use>
+      </svg>
       <app-edit
         class="text-base w-auto"
         type="text"
         [(value)]="userInfo.mail"
       ></app-edit>
     </li>
-    <li>
+    <li class="flex items-center gap-1">
+      <svg width="20" height="20">
+        <use href="./assets/sprite.svg#icon-mobile"></use>
+      </svg>
       <app-edit
         class="text-base w-auto"
         type="text"
         [(value)]="userInfo.tel"
       ></app-edit>
     </li>
-    <li>
+    <li class="flex items-center gap-1">
+      <svg width="20" height="20">
+        <use href="./assets/sprite.svg#icon-location"></use>
+      </svg>
       <app-edit
         class="text-base w-auto"
         type="text"
         [(value)]="userInfo.address"
       ></app-edit>
     </li>
-    <li>
+    <li class="flex items-center gap-1">
+      <svg width="20" height="20">
+        <use href="./assets/sprite.svg#icon-linkedin"></use>
+      </svg>
       <app-edit
         class="text-base w-auto"
         type="text"
