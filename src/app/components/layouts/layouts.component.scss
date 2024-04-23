@@ -1,0 +1,28 @@
+.wrapper{
+
+    .desc{
+        font-size: 20px;
+    }
+    .designWrapper{
+        cursor: pointer;
+        background-color: rgba(158, 131, 216, 0.404);
+        border: 1px solid rgb(44, 44, 44);
+        border-radius: 25px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        width: 250px;
+        margin: auto;
+        margin-bottom: 25px;
+        .title{
+            padding-bottom: 5px;
+        }
+        .cvImage{
+            width: 50%; 
+            height: auto;
+        }
+    }
+
+    .clicked{
+        box-shadow: 0 0 10px rgba(140, 0, 255, 0.678);
+    }
+}

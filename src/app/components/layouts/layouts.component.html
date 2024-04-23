@@ -1,1 +1,50 @@
-<p>layouts works!</p>
+<div class="wrapper">
+    <p class="desc">This is currently a filler</p>
+
+<!-- not dynamic, since no design options have been created yet, will make it dynamic once those have been created-->
+
+    <div class="designWrapper"   (click)="toggleLayout('designA')" [class.clicked]="isLayoutSelected('designA')">
+        <div class="title">
+            Design A
+        </div>
+        <div class="design">
+            <img class="cvImage" src="../../assets/lebenslauf2023.jpg">
+        </div>
+    </div>
+
+    <div class="designWrapper"   (click)="toggleLayout('designB')" [class.clicked]="isLayoutSelected('designB')">
+        <div class="title">
+            Design B
+        </div>
+        <div class="design">
+            <img class="cvImage" src="../../assets/lebenslauf2023.jpg">
+        </div>
+    </div>
+
+    <div class="designWrapper"  (click)="toggleLayout('designC')" [class.clicked]="isLayoutSelected('designC')">
+        <div class="title">
+            Design C
+        </div>
+        <div class="design">
+            <img class="cvImage" src="../../assets/lebenslauf2023.jpg">
+        </div>
+    </div>
+
+    <div class="designWrapper"  (click)="toggleLayout('designD')" [class.clicked]="isLayoutSelected('designD')">
+        <div class="title">
+            Design D
+        </div>
+        <div class="design">
+            <img class="cvImage" src="../../assets/lebenslauf2023.jpg">
+        </div>
+    </div>
+
+    <div class="designWrapper"   (click)="toggleLayout('designE')" [class.clicked]="isLayoutSelected('designE')">
+        <div class="title">
+            Design E
+        </div>
+        <div class="design">
+            <img class="cvImage" src="../../assets/lebenslauf2023.jpg">
+        </div>
+    </div>
+</div>
