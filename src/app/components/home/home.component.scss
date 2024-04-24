@@ -2,7 +2,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    
+
 
     .title {
         width: 100%;
@@ -26,7 +26,7 @@
         text-align: center;
         font-size: 24px;
         position: sticky;
-        
+
         .CVButton {
             width: 275px;
             text-align: center;
@@ -55,12 +55,40 @@
             left: 7px;
             transition: 0.2s;
         }
+    }
+}
+
+@media (max-width: 600px) {
+
+    .wrapper {
+        position: relative;
+        flex-direction: column;
+        display: flex;
 
 
-        @media (min-width: 768px) {
-            .CVButton {
-                padding: 13px 50px 13px;
-            }
+
+        .title {
+            width: 100%;
+            text-align: center;
+            font-size: 35px;
+            margin-top: 50px;
         }
+
+        .desc {
+            font-size: 22px;
+            margin: 40px;
+            margin-top: 0px;
+        }
+
+
+        .CVButton {
+            padding: 13px 50px 13px;
+        }
+
+        .buttonText {
+            font-size: 22px;
+        }
+
+
     }
 }
