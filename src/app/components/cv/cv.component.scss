@@ -109,10 +109,8 @@
 }
 
 
-@media (min-width: 768px) {
-  .exportButton {
-    padding: 13px 50px 13px;
-  }
+@media (max-width: 600px) {
+
 }
 
 @media print {
