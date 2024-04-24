@@ -15,56 +15,59 @@
     padding-top: 30px;
     height: 297mm;
     overflow-x: auto;
+
     .layoutChoices {
 
       .layout-title {
         font-size: 30px;
 
       }
-      .layouts{
+
+      .layouts {
         font-size: 20px;
       }
     }
   }
 
 
-.buttons{
-  margin-right: auto;
-  margin-top: 450px;
-  position: sticky;
-  .exportButton {
+  .buttons {
+    margin-right: auto;
+    margin-top: 450px;
+    position: sticky;
 
-    height: fit-content;
+    .exportButton {
 
-    width: 275px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 200;
-    letter-spacing: 1px;
-    padding: 13px 20px 13px;
-    outline: 0;
-    border: 1px solid rgb(44, 44, 44);
-    cursor: pointer;
-    position: relative;
-    background-color: rgb(255, 255, 255);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+      height: fit-content;
+
+      width: 275px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      padding: 13px 20px 13px;
+      outline: 0;
+      border: 1px solid rgb(44, 44, 44);
+      cursor: pointer;
+      position: relative;
+      background-color: rgb(255, 255, 255);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .exportButton:after {
+      content: "";
+      background-color: #a05bc0;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 7px;
+      left: 7px;
+      transition: 0.2s;
+    }
   }
 
-  .exportButton:after {
-    content: "";
-    background-color: #a05bc0;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: 7px;
-    left: 7px;
-    transition: 0.2s;
-  }
-}
- 
   .cv {
     width: 210mm;
     height: 297mm;
@@ -111,6 +114,40 @@
 
 @media (max-width: 600px) {
 
+  //mobile
+  .wrapper {
+  display: flex;
+  flex-direction: column;    
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 5px;
+  margin-top: 20px;
+
+    .layoutsWrapper {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      margin-bottom: 50px;
+    }
+
+
+    .buttons {
+      margin: 0;
+      margin-top: 35px;
+      margin-bottom: 15px;
+    }
+
+    .cv {
+      margin: 0;
+      width: 90%;
+      overflow:scroll; //only a filler until the proper designs have been converted
+
+    }
+  }
 }
 
 @media print {
