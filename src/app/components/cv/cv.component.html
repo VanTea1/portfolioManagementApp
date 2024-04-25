@@ -1,31 +1,29 @@
 <div class="wrapper">
+  <div class="layoutsWrapper">
+    <div class="layoutChoices">
+      <div class="layout-title">Layouts</div>
+      <app-layouts class="layouts"></app-layouts>
+    </div>
+  </div>
 
-    <div class="layoutsWrapper">
-        <div class="layoutChoices">
-            <div class="layout-title">Layouts</div>
-            <app-layouts class="layouts"></app-layouts>
-        </div>
+  <div #exportContent class="cv">
+    <div class="section">
+      <div class="section-title"></div>
+      <app-base-info></app-base-info>
     </div>
 
-    <div #exportContent class="cv">
-        <div class="section">
-            <div class="section-title">Base Info</div>
-            <app-base-info></app-base-info>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Projects</div>
-            <app-projects></app-projects>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Skills</div>
-            <app-skills></app-skills>
-        </div>
+    <div class="section">
+      <div class="section-title">Skills</div>
+      <app-skills></app-skills>
     </div>
 
-    <div class="buttons">
-        <button class="exportButton" (click)="exportToPDF()">Export to PDF</button>
+    <div class="section">
+      <div class="section-title">Projects</div>
+      <app-projects></app-projects>
     </div>
+  </div>
 
+  <div class="buttons">
+    <button class="exportButton" (click)="exportToPDF()">Export to PDF</button>
+  </div>
 </div>

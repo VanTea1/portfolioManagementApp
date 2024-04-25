@@ -1,11 +1,52 @@
-.text-area {
-  height: 100px;
-  width: 400px;
-  word-break: break-word;
-}
-
 .change-btn {
   &:hover button {
     @apply flex;
   }
+}
+
+.chooseButton {
+  height: fit-content;
+  position: sticky;
+  text-align: center;
+  padding: 0 8px 5px 2px;
+  outline: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  background-color: #a05bc0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.chooseButton::after {
+  content: "";
+  background-color: white;
+  width: 100%;
+  border: 1px solid rgb(44, 44, 44);
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  bottom: 4px;
+  right: 4px;
+  transition: 0.2s;
+}
+
+.contacts-wrapper {
+  position: relative;
+  background-color: #a05bc0;
+  z-index: 1;
+  padding: 0 8px 8px 2px;
+}
+.contacts-wrapper:after {
+  border: 1px solid rgb(44, 44, 44);
+  background-color: white;
+  content: "";
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  bottom: 4px;
+  right: 4px;
+  transition: 0.2s;
 }

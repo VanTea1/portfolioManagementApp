@@ -11,9 +11,9 @@ import { IProject } from '../../models/Project';
 })
 export class ProjectsComponent {
 
-  projects: IProject[] = [{id:1, title:'type title',description:'type description', industry:'type industry', period:'type period', objectives:'type objectives'}];
+  projects: IProject[] = [{id:1, title:'type title',description:'type description'}];
 
-  projectToAdd: IProject = { id: Math.floor(Math.random() * 1000), title: 'type title', description: 'type description', industry: 'type industry', period: 'type period', objectives: 'type objectives' }
+  projectToAdd: IProject = { id: Math.floor(Math.random() * 1000), title: 'type title', description: 'type description' }
 
     addProject() {
     this.projects.push(this.projectToAdd);
@@ -26,6 +26,9 @@ export class ProjectsComponent {
   }
   addProjectField(project:IProject) {
     const key = Math.floor(Math.random() * 1000).toString();
-    project[key] = 'new field';
+    project[key] = ['new title', 'new field'];
+  }
+  deleteProjectField(key:string, project:IProject) {
+    delete project[key];
   }
 }
