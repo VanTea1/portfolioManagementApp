@@ -27,6 +27,7 @@
 
       .layouts {
         font-size: 20px;
+
       }
     }
   }
@@ -118,21 +119,21 @@
 
   //mobile
   .wrapper {
-  display: flex;
-  flex-direction: column;    
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  margin-left: 5px;
-  margin-top: 20px;
+    margin-left: 1px;
+    margin-top: 20px;
 
     .layoutsWrapper {
       justify-content: center;
       align-items: center;
       width: 100%;
-
+      margin: 0;
       margin-bottom: 50px;
     }
 
@@ -146,7 +147,7 @@
     .cv {
       margin: 0;
       width: 90%;
-      overflow:scroll; //only a filler until the proper designs have been converted
+      overflow: scroll; //only a filler until the proper designs have been converted
 
     }
   }
@@ -154,15 +155,15 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .wrapper {
-  display: flex;
-  flex-direction: column;    
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  margin-left: 5px;
-  margin-top: 20px;
+    margin-left: 5px;
+    margin-top: 20px;
 
     .layoutsWrapper {
       justify-content: center;
@@ -182,7 +183,7 @@
     .cv {
       margin: 0;
       width: 90%;
-      overflow:scroll; //only a filler until the proper designs have been converted
+      overflow: scroll; //only a filler until the proper designs have been converted
 
     }
   }
@@ -199,7 +200,7 @@
     width: 80%;
   }
 
-  .buttons{
+  .buttons {
     margin-left: 15px;
   }
 

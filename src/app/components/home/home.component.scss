@@ -9,6 +9,7 @@
         text-align: center;
         font-size: 55px;
         margin-bottom: 50px;
+        margin-top: 70px;
     }
 
     .desc {
@@ -26,6 +27,11 @@
         text-align: center;
         font-size: 24px;
         position: sticky;
+
+
+        .buttonText {
+            margin-bottom: 35px;
+        }
 
         .CVButton {
             width: 275px;
@@ -59,7 +65,8 @@
 }
 
 @media (max-width: 600px) {
-//mobile
+
+    //mobile
     .wrapper {
         position: relative;
         flex-direction: column;
@@ -83,6 +90,7 @@
 
         .CVButton {
             padding: 13px 50px 13px;
+            margin-bottom: 30px;
         }
 
         .buttonText {
