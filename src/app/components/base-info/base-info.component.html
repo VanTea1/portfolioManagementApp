@@ -1,4 +1,4 @@
-<section class="base-info bg-gray-200">
+<section class="base-info">
   <div class="flex justify-around">
     <div class="flex flex-col gap-3 max-w-[70%]">
       <app-edit
@@ -13,7 +13,7 @@
       ></app-edit>
 
       <textarea
-        class="text-area text-xs bg-gray-200"
+        class="text-xs lg:w-[350px] xl:w-[450px] lg:h-20"
         type="text"
         [(value)]="description"
       ></textarea>
@@ -22,11 +22,7 @@
     <div class="flex flex-col gap-2 justify-center items-center">
       @if(avatarUrl){
       <div class="change-btn justify-center items-center">
-        <img
-          class="w-28 h-28 rounded-full border p-1"
-          [src]="avatarUrl"
-          alt="userAvatar"
-        />
+        <img class="w-28 h-28 border p-1" [src]="avatarUrl" alt="userAvatar" />
         <input
           type="file"
           #fileInput
@@ -34,7 +30,7 @@
           (change)="onFileSelected($event)"
         />
         <button
-          class="hidden shadow-md p-1 text-white bg-purple-500 text-xs"
+          class="hidden chooseButton text-base mt-2 ml-1"
           (click)="fileInput.click()"
         >
           Change photo
@@ -48,17 +44,14 @@
         style="display: none"
         (change)="onFileSelected($event)"
       />
-      <button
-        class="shadow-md p-1 text-white bg-purple-500 text-xs"
-        (click)="fileInput.click()"
-      >
+      <button class="chooseButton text-base" (click)="fileInput.click()">
         Choose photo
       </button>
       }
     </div>
   </div>
 
-  <ul class="flex justify-around mt-2 gap-3 text-xs bg-gray-300">
+  <ul class="flex justify-around mt-2 gap-3 text-sm contacts-wrapper">
     <li class="flex items-center gap-1">
       <svg class="fill-purple-500" width="20" height="20">
         <use href="./assets/sprite.svg#icon-envelop"></use>

@@ -1,11 +1,11 @@
 @if (!isEditMode) {
-<div class="relative change-container flex">
+<div class="relative change-container flex hover:pr-4">
   <div>{{ value }}</div>
   <button class="hidden" (click)="switchEditMode()">
     <svg
-      class="absolute right-[-20px] fill-purple-500 top-0 hover:scale-125"
-      width="20"
-      height="20"
+      class="absolute right-[-4px] fill-purple-500 top-0 hover:scale-125 transition-all"
+      width="16"
+      height="16"
     >
       <use href="./assets/sprite.svg#icon-pencil"></use>
     </svg>
@@ -21,7 +21,7 @@
   />
   <button (click)="switchEditMode()">
     <svg
-      class="absolute right-[-20px] fill-purple-500 top-0 hover:scale-125"
+      class="absolute right-[-16] fill-purple-500 top-0 hover:scale-125 transition-all"
       width="20"
       height="20"
     >

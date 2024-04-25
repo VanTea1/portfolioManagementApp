@@ -8,3 +8,10 @@
 // .skills-section :hover ~ .add-skill {
 //   @apply block;
 // }
+.skills-section {
+  &:hover {
+    button {
+      display: flex;
+    }
+  }
+}

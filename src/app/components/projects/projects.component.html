@@ -1,47 +1,75 @@
-<section class="skills-section max-w-[50%]">
+<section class="projects-section flex flex-col gap-4 min-h-5 max-w-[50%]">
   @for(project of projects; track $index){
   <div class="flex flex-col gap-2">
-    <app-edit class="text-xl" type="text" [(value)]="project.title"></app-edit>
-    <app-edit
-      class="text-base"
-      type="text"
-      [(value)]="project.description"
-    ></app-edit>
+    <div class="flex gap-1">
+      <div class="text-xl w-auto">Title:</div>
+      <app-edit
+        class="text-xl"
+        type="text"
+        [(value)]="project.title"
+      ></app-edit>
+    </div>
+    <div class="flex gap-1">
+      <div class="text-base w-auto">Description:</div>
+      <app-edit
+        class="text-base"
+        type="text"
+        [(value)]="project.description"
+      ></app-edit>
+    </div>
     @for(key of getProjectTitles(project); track key){
-    <app-edit
-      class="text-base w-auto"
-      type="text"
-      [(value)]="project[key]"
-    ></app-edit>
+    <div class="relative flex gap-1">
+      <app-edit
+        class="text-base w-auto"
+        type="text"
+        [(value)]="project[key][0]"
+      ></app-edit
+      >:
+      <app-edit
+        class="text-base w-auto"
+        type="text"
+        [(value)]="project[key][1]"
+      ></app-edit>
+      <button
+        class="absolute top-[2px] left-[-14px] hidden"
+        (click)="deleteProjectField(key, project)"
+      >
+        <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
+          <use href="./assets/sprite.svg#icon-bin"></use>
+        </svg>
+      </button>
+    </div>
     }
     <button
-      class="flex justify-center items-center text-purple-500 uppercase gap-1"
+      class="hidden items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
       (click)="addProjectField(project)"
     >
-      <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
+      <svg class="fill-purple-500" width="14" height="14">
         <use href="./assets/sprite.svg#icon-plus"></use>
       </svg>
       Field
     </button>
 
     <button
-      class="flex justify-center items-center text-purple-500 uppercase gap-1"
+      class="hidden text-base items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
       (click)="deleteProject($index)"
     >
-      <svg class="fill-purple-500 hover:scale-125" width="20" height="20">
+      <svg class="fill-purple-500" width="16" height="16">
         <use href="./assets/sprite.svg#icon-bin"></use>
       </svg>
       Project
     </button>
   </div>
   }
-  <button
-    class="add-project flex justify-center items-center text-purple-500 uppercase gap-1"
-    (click)="addProject()"
-  >
-    <svg class="fill-purple-500 hover:scale-125" width="20" height="20">
-      <use href="./assets/sprite.svg#icon-plus"></use>
-    </svg>
-    Project
-  </button>
+  <div class="flex justify-center items-center">
+    <button
+      class="add-project hidden justify-center items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
+      (click)="addProject()"
+    >
+      <svg class="fill-purple-500" width="20" height="20">
+        <use href="./assets/sprite.svg#icon-plus"></use>
+      </svg>
+      Project
+    </button>
+  </div>
 </section>

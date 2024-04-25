@@ -1,39 +1,48 @@
 <section class="skills-section max-w-[50%]">
   @for(skill of skills; track $index){
-  <div class="flex justify-between items-center">
-    <app-edit
-      class="text-base w-auto max-w-[70%]"
-      type="text"
-      [(value)]="skills[$index]"
-    ></app-edit>
-    <button (click)="deleteSkill($index)">
-      <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
-        <use href="./assets/sprite.svg#icon-bin"></use>
-      </svg>
-    </button>
+  <div class="skill flex justify-between items-center">
+    <div class="relative">
+      <app-edit
+        class="relative text-base w-auto max-w-[70%]"
+        type="text"
+        [(value)]="skills[$index]"
+      ></app-edit>
+      <button
+        class="absolute top-[2px] left-[-14px] hidden"
+        (click)="deleteSkill($index)"
+      >
+        <svg
+          class="fill-purple-500 hover:scale-125 transition-all"
+          width="16"
+          height="16"
+        >
+          <use href="./assets/sprite.svg#icon-bin"></use>
+        </svg>
+      </button>
+    </div>
     <div class="flex space-x-1">
       <label
         class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
       >
-        <input class="hidden" type="checkbox" />
+        <input class="hidden" checked type="checkbox" />
         <div class="checkmark"></div>
       </label>
       <label
         class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
       >
-        <input class="hidden" type="checkbox" />
+        <input class="hidden" checked type="checkbox" />
         <div class="checkmark"></div>
       </label>
       <label
         class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
       >
-        <input class="hidden" type="checkbox" />
+        <input class="hidden" checked type="checkbox" />
         <div class="checkmark"></div>
       </label>
       <label
         class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
       >
-        <input class="hidden" type="checkbox" />
+        <input class="hidden" checked type="checkbox" />
         <div class="checkmark"></div>
       </label>
       <label
@@ -51,9 +60,13 @@
     </div>
   </div>
   }
-  <button class="add-skill" (click)="addSkill()">
-    <svg class="fill-purple-500 hover:scale-125" width="20" height="20">
+  <button
+    class="add-skill hidden justify-center items-center text-purple-500 uppercase gap-1 hover:scale-125 transition-all"
+    (click)="addSkill()"
+  >
+    <svg class="fill-purple-500" width="20" height="20">
       <use href="./assets/sprite.svg#icon-plus"></use>
     </svg>
+    Skill
   </button>
 </section>
