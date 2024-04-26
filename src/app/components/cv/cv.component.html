@@ -1,8 +1,14 @@
 <div class="wrapper">
-  <div class="layoutsWrapper">
-    <div class="layoutChoices">
-      <div class="layout-title">Layouts</div>
-      <app-layouts class="layouts"></app-layouts>
+  <div class="layoutsAndButtons">
+    <div class="buttons">
+      <button class="exportButton" (click)="exportToPDF()">Export to PDF</button>
+    </div>
+    
+    <div class="layoutsWrapper">
+      <div class="layoutChoices">
+        <div class="layout-title">Layouts</div>
+        <app-layouts class="layouts"></app-layouts>
+      </div>
     </div>
   </div>
 
@@ -23,7 +29,4 @@
     </div>
   </div>
 
-  <div class="buttons">
-    <button class="exportButton" (click)="exportToPDF()">Export to PDF</button>
-  </div>
 </div>
