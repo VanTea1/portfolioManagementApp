@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class EditComponent {
      @Input() value : string = '';
+     @Input() inputWidth : number = 0;
     @Output() valueChange = new EventEmitter<string>();
     
   onValueChange(model: string) {

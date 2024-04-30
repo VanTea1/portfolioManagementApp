@@ -1,9 +1,15 @@
 @if (!isEditMode) {
-<div class="relative change-container flex hover:pr-4">
-  <div>{{ value }}</div>
-  <button class="hidden" (click)="switchEditMode()">
+<div
+  [style.width.px]="inputWidth"
+  (dblclick)="switchEditMode()"
+  class="relative change-container min-w-32 flex hover:pr-4"
+>
+  <div class="">
+    {{ value }}
+  </div>
+  <button class="hidden justify-center items-center" (click)="switchEditMode()">
     <svg
-      class="absolute right-[-4px] fill-purple-500 top-0 hover:scale-125 transition-all"
+      class="absolute right-[-10px] fill-purple-500 top-0 hover:scale-125 transition-all"
       width="16"
       height="16"
     >
@@ -15,13 +21,14 @@
 <div class="flex relative">
   <input
     type="text"
-    class="w-full animate-pulse"
+    class="w-full animate-pulse min-w-28"
     [ngModel]="value"
+    [style.width.px]="inputWidth"
     (ngModelChange)="onValueChange($event)"
   />
   <button (click)="switchEditMode()">
     <svg
-      class="absolute right-[-16] fill-purple-500 top-0 hover:scale-125 transition-all"
+      class="absolute right-[-16] fill-purple-500 top-0 hover:scale-125 transition-all z-10"
       width="20"
       height="20"
     >

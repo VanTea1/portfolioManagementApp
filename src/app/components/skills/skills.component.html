@@ -1,15 +1,18 @@
 <section class="skills-section max-w-[50%]">
-  @for(skill of skills; track $index){
-  <div class="skill flex justify-between items-center">
+  <div
+    *ngFor="let skill of skills; let idxSkill = index"
+    class="skill flex justify-between items-center"
+  >
     <div class="relative">
       <app-edit
-        class="relative text-base w-auto max-w-[70%]"
+        class="relative text-base w-auto max-w-[50%]"
         type="text"
-        [(value)]="skills[$index]"
+        [(value)]="skill.name"
+        [inputWidth]="skill.name.length * 9"
       ></app-edit>
       <button
         class="absolute top-[2px] left-[-14px] hidden"
-        (click)="deleteSkill($index)"
+        (click)="deleteSkill(idxSkill)"
       >
         <svg
           class="fill-purple-500 hover:scale-125 transition-all"
@@ -21,45 +24,21 @@
       </button>
     </div>
     <div class="flex space-x-1">
-      <label
-        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
-      >
-        <input class="hidden" checked type="checkbox" />
-        <div class="checkmark"></div>
-      </label>
-      <label
-        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
-      >
-        <input class="hidden" checked type="checkbox" />
-        <div class="checkmark"></div>
-      </label>
-      <label
-        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
-      >
-        <input class="hidden" checked type="checkbox" />
-        <div class="checkmark"></div>
-      </label>
-      <label
-        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
-      >
-        <input class="hidden" checked type="checkbox" />
-        <div class="checkmark"></div>
-      </label>
-      <label
-        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
-      >
-        <input class="hidden" type="checkbox" />
-        <div class="checkmark"></div>
-      </label>
-      <label
-        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
-      >
-        <input class="hidden" type="checkbox" />
-        <div class="checkmark"></div>
-      </label>
+      <div *ngFor="let lvl of skill.level; let idxLvl = index">
+        <label
+          class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+        >
+          <input
+            (click)="handleCheckboxClick(idxSkill, idxLvl)"
+            [ngClass]="{ checked: lvl }"
+            class="hidden"
+            type="checkbox"
+          />
+          <div class="checkmark"></div>
+        </label>
+      </div>
     </div>
   </div>
-  }
   <button
     class="add-skill hidden justify-center items-center text-purple-500 uppercase gap-1 hover:scale-125 transition-all"
     (click)="addSkill()"

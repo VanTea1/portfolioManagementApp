@@ -1,44 +1,41 @@
 <section class="projects-section flex flex-col gap-4 min-h-5 max-w-[50%]">
   @for(project of projects; track $index){
   <div class="flex flex-col gap-2">
-    <div class="flex gap-1">
-      <div class="text-xl w-auto">Title:</div>
-      <app-edit
-        class="text-xl"
-        type="text"
-        [(value)]="project.title"
-      ></app-edit>
-    </div>
-    <div class="flex gap-1">
-      <div class="text-base w-auto">Description:</div>
-      <app-edit
-        class="text-base"
-        type="text"
-        [(value)]="project.description"
-      ></app-edit>
-    </div>
+    <app-edit class="text-xl" [(value)]="project.title"></app-edit>
+    <app-edit
+      class="text-base"
+      type="text"
+      [(value)]="project.description"
+    ></app-edit>
     @for(key of getProjectTitles(project); track key){
-    <div class="relative flex gap-1">
-      <app-edit
-        class="text-base w-auto"
-        type="text"
-        [(value)]="project[key][0]"
-      ></app-edit
-      >:
-      <app-edit
-        class="text-base w-auto"
-        type="text"
-        [(value)]="project[key][1]"
-      ></app-edit>
-      <button
-        class="absolute top-[2px] left-[-14px] hidden"
-        (click)="deleteProjectField(key, project)"
-      >
-        <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
-          <use href="./assets/sprite.svg#icon-bin"></use>
-        </svg>
-      </button>
-    </div>
+    <table class="relative ml-10 table-auto w-full">
+      <tbody class="text-sm">
+        <tr>
+          <td class="text-right max-w-40">
+            <app-edit
+              class="text-right text-base w-auto"
+              type="text"
+              [(value)]="project[key][0]"
+            ></app-edit>
+          </td>
+          <td class="pl-4">
+            <app-edit
+              class="text-base w-auto max-w-96"
+              type="text"
+              [(value)]="project[key][1]"
+            ></app-edit>
+          </td>
+          <button
+            class="absolute top-[2px] left-[-14px] hidden"
+            (click)="deleteProjectField(key, project)"
+          >
+            <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
+              <use href="./assets/sprite.svg#icon-bin"></use>
+            </svg>
+          </button>
+        </tr>
+      </tbody>
+    </table>
     }
     <button
       class="hidden items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
@@ -73,3 +70,21 @@
     </button>
   </div>
 </section>
+
+<table class="table-auto w-full">
+  <tbody class="text-sm">
+    <tr>
+      <td class="text-right p-2">Formale Sprachen</td>
+      <td class="p-2">
+        TypeScript, JavaScript, Kotlin, Java, Go, Python, Shell Scripting, CSS,
+        SASS
+      </td>
+    </tr>
+    <tr>
+      <td class="text-right p-2">Frameworks</td>
+      <td class="p-2">
+        Angular, Vue, React, Spring Boot, Express, Hibernate, Flyway
+      </td>
+    </tr>
+  </tbody>
+</table>
