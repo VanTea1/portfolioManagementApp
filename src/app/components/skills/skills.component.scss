@@ -1,6 +1,6 @@
-.label input:checked ~ .checkmark {
-  @apply bg-slate-500 rounded-full w-2 h-2;
-}
+// .label input:checked ~ .checkmark {
+//   @apply bg-slate-500 rounded-full w-2 h-2;
+// }
 
 .skills-section {
   @apply pb-5;
@@ -14,4 +14,7 @@
       display: flex;
     }
   }
+}
+.checked ~ .checkmark {
+  @apply bg-slate-500 rounded-full w-2 h-2;
 }

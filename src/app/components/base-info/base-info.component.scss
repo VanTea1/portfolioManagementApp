@@ -17,6 +17,14 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  @apply transition-all;
+  &:hover {
+    padding: 4px;
+    &::after {
+      bottom: 0px;
+      right: 0px;
+    }
+  }
 }
 
 .chooseButton::after {

@@ -2,14 +2,16 @@
   <div class="flex justify-around">
     <div class="flex flex-col gap-3 max-w-[70%]">
       <app-edit
-        class="text-xl font-bold max-w-[50%]"
+        class="text-xl font-bold max-w-full"
         type="text"
         [(value)]="userName"
+        [inputWidth]="userName.length * 10"
       ></app-edit>
       <app-edit
-        class="text-base w-auto max-w-[70%]"
+        class="text-base w-auto max-w-full"
         type="text"
         [(value)]="position"
+        [inputWidth]="position.length * 9"
       ></app-edit>
 
       <textarea
@@ -60,6 +62,7 @@
         class="text-base w-auto"
         type="text"
         [(value)]="userInfo.mail"
+        [inputWidth]="userInfo.mail.length * 9"
       ></app-edit>
     </li>
     <li class="flex items-center gap-1">
@@ -70,6 +73,7 @@
         class="text-base w-auto"
         type="text"
         [(value)]="userInfo.tel"
+        [inputWidth]="userInfo.tel.length * 9"
       ></app-edit>
     </li>
     <li class="flex items-center gap-1">
@@ -80,6 +84,7 @@
         class="text-base w-auto"
         type="text"
         [(value)]="userInfo.address"
+        [inputWidth]="userInfo.address.length * 9"
       ></app-edit>
     </li>
     <li class="flex items-center gap-1">
@@ -90,6 +95,7 @@
         class="text-base w-auto"
         type="text"
         [(value)]="userInfo.linkedIn"
+        [inputWidth]="userInfo.linkedIn.length * 9"
       ></app-edit>
     </li>
   </ul>
