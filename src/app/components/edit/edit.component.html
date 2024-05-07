@@ -4,7 +4,7 @@
   (dblclick)="switchEditMode()"
   class="relative change-container min-w-32 flex hover:pr-4"
 >
-  <div class="">
+  <div class="cursor-default">
     {{ value }}
   </div>
   <button class="hidden justify-center items-center" (click)="switchEditMode()">
@@ -21,7 +21,7 @@
 <div class="flex relative">
   <input
     type="text"
-    class="w-full animate-pulse min-w-28"
+    class="w-full animate-pulse min-w-28 text-purple-500"
     [ngModel]="value"
     [style.width.px]="inputWidth"
     (ngModelChange)="onValueChange($event)"
