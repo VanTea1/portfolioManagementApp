@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import html2pdf from 'html2pdf.js';
+import html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-export',
@@ -17,6 +17,6 @@ export class ExportComponent {
       filename: 'website.pdf'
     };
   
-    //html2pdf().set(options).from(element).save();
+    html2pdf().set(options).from(element).save();
   }
 }
