@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import html2pdf from 'html2pdf.js';
 
 @Component({
@@ -10,13 +10,13 @@ import html2pdf from 'html2pdf.js';
 })
 export class ExportComponent {
 
+  @Input() cvContent!: HTMLElement;
 
   exportAsPDF() {
-    const element = document.documentElement;
     const options = {
-      filename: 'website.pdf'
+      filename: 'cv.pdf'
     };
-  
-    html2pdf().set(options).from(element).save();
+
+    html2pdf().set(options).from(this.cvContent).save();
   }
 }

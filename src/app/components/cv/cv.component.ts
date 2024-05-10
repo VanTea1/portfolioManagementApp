@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
 import { BaseInfoComponent } from "../base-info/base-info.component";
@@ -16,6 +16,7 @@ import { ExportComponent} from '../export/export.component';
 export class CVComponent implements AfterViewInit {
 
     @ViewChild('exportContent', { static: false }) exportContent!: ElementRef<any>;
+    @Output() exportCV = new EventEmitter<void>();
 
     constructor() { }
 
@@ -26,5 +27,8 @@ export class CVComponent implements AfterViewInit {
         }
     }
 
+    onExportCV() {
+      this.exportCV.emit();
+    }
 
 }
