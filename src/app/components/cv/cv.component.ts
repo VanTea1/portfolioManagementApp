@@ -25,7 +25,7 @@ export class CVComponent implements AfterViewInit {
             return;
         }
 
-        this.insertPageBreaks(exportContentElement);
+
     }
 
     onExportCV() {
@@ -33,27 +33,6 @@ export class CVComponent implements AfterViewInit {
     }
 
 
-    //does not work yet
-    insertPageBreaks(exportContentElement: HTMLElement) {
-      const sections: NodeListOf<HTMLElement> = exportContentElement.querySelectorAll('.section');
-      const pageHeight: number = 800; 
-  
-      let currentPosition: number = 0;
-      console.log('Number of sections:', sections.length);
-      sections.forEach((section: HTMLElement) => {
-        const sectionHeight: number = section.offsetHeight;
-  
-        if (currentPosition + sectionHeight > pageHeight) {
-          const pageBreak: HTMLDivElement = document.createElement('div');
-          pageBreak.className = 'page-break';
-          exportContentElement.appendChild(pageBreak);
-  
-          currentPosition = 0; 
-        }
-  
-        currentPosition += sectionHeight;
-      });
-    }
-   
+
 
 }
