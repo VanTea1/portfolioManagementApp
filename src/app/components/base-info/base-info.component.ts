@@ -12,7 +12,11 @@ import { IUser } from '../../models/User';
 export class BaseInfoComponent {
   userName: string = 'Enter name';
   position: string = 'Business Development Manager';
-  description: string = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis deleniti voluptatum odio accusamus repudiandae eos facilis sint, porro dolore voluptatem dolorem officia obcaecati, sed quasi exercitationem voluptate reiciendis, recusandae hic';
+  mainEmphasis: string = "Java";
+  availability: string = "immediately";
+  training: string = "school";
+  languages: string = "English, German, ...";
+  role: string = "developer";
 
   userInfo: IUser = {
     mail: 'asdasd@mail.com',

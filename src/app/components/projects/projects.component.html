@@ -2,33 +2,30 @@
   @for(project of projects; track $index){
   <div class="flex flex-col gap-2">
     <app-edit class="text-xl" [(value)]="project.title"></app-edit>
-    <app-edit
-      class="text-base"
-      type="text"
-      [(value)]="project.description"
-    ></app-edit>
+    <app-edit class="text-base" type="text" [(value)]="project.description"></app-edit>
+
+    <!--currently it adds a second row after the p tag, not supposed to happen-->
+    <p>Teamsize: </p> <app-edit class="text-base" type="text" [(value)]="project.teamsize"></app-edit>
+    <p>Role: </p> <app-edit class="text-base" type="text" [(value)]="project.role"></app-edit>
+    <p>Tasks: </p> <app-edit class="text-base" type="text" [(value)]="project.tasks"></app-edit>
+    <p>Environment: </p> <app-edit class="text-base" type="text" [(value)]="project.environment"></app-edit>
+    <p>Framework: </p> <app-edit class="text-base" type="text" [(value)]="project.framework"></app-edit>
+    <p>Buildtools: </p> <app-edit class="text-base" type="text" [(value)]="project.buildtools"></app-edit>
+    <p>Coding Language: </p> <app-edit class="text-base" type="text" [(value)]="project.language"></app-edit>
+    <p>Technical Details: </p> <app-edit class="text-base" type="text" [(value)]="project.technical"></app-edit>
+
     @for(key of getProjectTitles(project); track key){
     <table class="relative ml-10 table-auto w-full">
       <tbody class="text-sm">
         <tr>
           <td class="text-right max-w-40">
-            <app-edit
-              class="text-right text-base w-auto"
-              type="text"
-              [(value)]="project[key][0]"
-            ></app-edit>
+            <app-edit class="text-right text-base w-auto" type="text" [(value)]="project[key][0]"></app-edit>
           </td>
           <td class="pl-4">
-            <app-edit
-              class="text-base w-auto max-w-96"
-              type="text"
-              [(value)]="project[key][1]"
-            ></app-edit>
+            <app-edit class="text-base w-auto max-w-96" type="text" [(value)]="project[key][1]"></app-edit>
           </td>
-          <button
-            class="absolute top-[2px] left-[-14px] hidden"
-            (click)="deleteProjectField(key, project)"
-          >
+
+          <button class="absolute top-[2px] left-[-14px] hidden" (click)="deleteProjectField(key, project)">
             <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
               <use href="./assets/sprite.svg#icon-bin"></use>
             </svg>
@@ -37,20 +34,16 @@
       </tbody>
     </table>
     }
-    <button
-      class="hidden items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
-      (click)="addProjectField(project)"
-    >
+    <button class="hidden items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
+      (click)="addProjectField(project)">
       <svg class="fill-purple-500" width="14" height="14">
         <use href="./assets/sprite.svg#icon-plus"></use>
       </svg>
       Field
     </button>
 
-    <button
-      class="hidden text-base items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
-      (click)="deleteProject($index)"
-    >
+    <button class="hidden text-base items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
+      (click)="deleteProject($index)">
       <svg class="fill-purple-500" width="16" height="16">
         <use href="./assets/sprite.svg#icon-bin"></use>
       </svg>
@@ -61,8 +54,7 @@
   <div class="flex justify-center items-center">
     <button
       class="add-project hidden justify-center items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
-      (click)="addProject()"
-    >
+      (click)="addProject()">
       <svg class="fill-purple-500" width="20" height="20">
         <use href="./assets/sprite.svg#icon-plus"></use>
       </svg>

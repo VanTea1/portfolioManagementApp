@@ -1,51 +1,47 @@
 <section class="base-info">
   <div class="flex justify-around">
     <div class="flex flex-col gap-3 max-w-[70%]">
-      <app-edit
-        class="text-xl font-bold max-w-full"
-        type="text"
-        [(value)]="userName"
-        [inputWidth]="userName.length * 10"
-      ></app-edit>
-      <app-edit
-        class="text-base w-auto max-w-full"
-        type="text"
-        [(value)]="position"
-        [inputWidth]="position.length * 9"
-      ></app-edit>
+      <app-edit class="text-xl font-bold max-w-full" type="text" [(value)]="userName"
+        [inputWidth]="userName.length * 10"></app-edit>
+      <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="position"
+        [inputWidth]="position.length * 9"></app-edit>
+    </div>
 
-      <textarea
-        class="text-xs lg:w-[350px] xl:w-[450px] lg:h-20"
-        type="text"
-        [(value)]="description"
-      ></textarea>
+    <!-- should be below job title -->
+    <div class="details">
+      <p>Main Emphasis:</p>
+      <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="mainEmphasis"
+        [inputWidth]="position.length * 9"></app-edit>
+
+      <p>Availability:</p>  
+      <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="availability"
+        [inputWidth]="position.length * 9"></app-edit>
+
+      <p>Training:</p>  
+      <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="training"
+        [inputWidth]="position.length * 9"></app-edit>
+
+      <p>Languages:</p>
+      <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="languages"
+        [inputWidth]="position.length * 9"></app-edit>
+
+      <p>Role:</p>
+      <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="role"
+        [inputWidth]="position.length * 9"></app-edit>
     </div>
 
     <div class="flex flex-col gap-2 justify-center items-center">
       @if(avatarUrl){
       <div class="change-btn justify-center items-center">
         <img class="w-28 h-28 border p-1" [src]="avatarUrl" alt="userAvatar" />
-        <input
-          type="file"
-          #fileInput
-          style="display: none"
-          (change)="onFileSelected($event)"
-        />
-        <button
-          class="hidden chooseButton text-base mt-2 ml-1"
-          (click)="fileInput.click()"
-        >
+        <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)" />
+        <button class="hidden chooseButton text-base mt-2 ml-1" (click)="fileInput.click()">
           Change photo
         </button>
       </div>
       }@else {
 
-      <input
-        type="file"
-        #fileInput
-        style="display: none"
-        (change)="onFileSelected($event)"
-      />
+      <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)" />
       <button class="chooseButton text-base" (click)="fileInput.click()">
         Choose photo
       </button>
@@ -56,39 +52,23 @@
   <ul class="flex justify-around mt-2 gap-3 text-sm contacts-wrapper">
     <li class="flex items-center gap-1">
       <img src="../../../assets/mail.png" class="imgs">
-      <app-edit
-        class="text-base w-auto"
-        type="text"
-        [(value)]="userInfo.mail"
-        [inputWidth]="userInfo.mail.length * 9"
-      ></app-edit>
+      <app-edit class="text-base w-auto" type="text" [(value)]="userInfo.mail"
+        [inputWidth]="userInfo.mail.length * 9"></app-edit>
     </li>
     <li class="flex items-center gap-1">
       <img src="../../../assets/mobile.png" class="imgs">
-      <app-edit
-        class="text-base w-auto"
-        type="text"
-        [(value)]="userInfo.tel"
-        [inputWidth]="userInfo.tel.length * 9"
-      ></app-edit>
+      <app-edit class="text-base w-auto" type="text" [(value)]="userInfo.tel"
+        [inputWidth]="userInfo.tel.length * 9"></app-edit>
     </li>
     <li class="flex items-center gap-1">
       <img src="../../../assets/location.png" class="imgs">
-      <app-edit
-        class="text-base w-auto"
-        type="text"
-        [(value)]="userInfo.address"
-        [inputWidth]="userInfo.address.length * 9"
-      ></app-edit>
+      <app-edit class="text-base w-auto" type="text" [(value)]="userInfo.address"
+        [inputWidth]="userInfo.address.length * 9"></app-edit>
     </li>
     <li class="flex items-center gap-1">
       <img src="../../../assets/linkedin.png" class="imgs">
-      <app-edit
-        class="text-base w-auto"
-        type="text"
-        [(value)]="userInfo.linkedIn"
-        [inputWidth]="userInfo.linkedIn.length * 9"
-      ></app-edit>
+      <app-edit class="text-base w-auto" type="text" [(value)]="userInfo.linkedIn"
+        [inputWidth]="userInfo.linkedIn.length * 9"></app-edit>
     </li>
   </ul>
 </section>
