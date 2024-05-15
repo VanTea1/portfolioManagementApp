@@ -18,8 +18,10 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   @apply transition-all;
+
   &:hover {
     padding: 4px;
+
     &::after {
       bottom: 0px;
       right: 0px;
@@ -46,6 +48,7 @@
   z-index: 1;
   padding: 0 8px 8px 2px;
 }
+
 .contacts-wrapper:after {
   border: 1px solid rgb(44, 44, 44);
   background-color: white;
@@ -60,7 +63,35 @@
 }
 
 
-.imgs{
+.imgs {
   width: 25px;
   height: 25px;
 }
+
+
+.base-info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.flex.justify-around {
+  justify-content:space-around;
+  width: 100%; 
+
+}
+.name{
+  font-size: 20px;
+}
+.position{
+  font-size: 18px;
+}
+.details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+

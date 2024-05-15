@@ -9,5 +9,11 @@ import { EditComponent } from "../edit/edit.component";
     imports: [EditComponent]
 })
 export class ItKnowledgeComponent {
-
+    frameworks: string = 'Angular';
+    databases: string = "mySQL";
+    buildSystems: string = "npm";
+    tools: string = "Git, Figma";
+    os: string = "Windows, Linux(Ubuntu)";
+    devEnvironment: string = "VS Code";
+    languages: string = "JavaScript, TypeScript, Java";
 }
