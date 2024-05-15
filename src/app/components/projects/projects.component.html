@@ -4,7 +4,7 @@
     <app-edit class="text-xl" [(value)]="project.title"></app-edit>
     <app-edit class="text-base" type="text" [(value)]="project.description"></app-edit>
 
-    <!--currently it adds a second row after the p tag, not supposed to happen-->
+<div class="jobDetails">
     <p>Teamsize: </p> <app-edit class="text-base" type="text" [(value)]="project.teamsize"></app-edit>
     <p>Role: </p> <app-edit class="text-base" type="text" [(value)]="project.role"></app-edit>
     <p>Tasks: </p> <app-edit class="text-base" type="text" [(value)]="project.tasks"></app-edit>
@@ -13,6 +13,7 @@
     <p>Buildtools: </p> <app-edit class="text-base" type="text" [(value)]="project.buildtools"></app-edit>
     <p>Coding Language: </p> <app-edit class="text-base" type="text" [(value)]="project.language"></app-edit>
     <p>Technical Details: </p> <app-edit class="text-base" type="text" [(value)]="project.technical"></app-edit>
+  </div>
 
     @for(key of getProjectTitles(project); track key){
     <table class="relative ml-10 table-auto w-full">
