@@ -4,12 +4,13 @@ import { ProjectsComponent } from "../projects/projects.component";
 import { SkillsComponent } from "../skills/skills.component";
 import { LayoutsComponent } from "../layouts/layouts.component";
 import { ExportComponent} from '../export/export.component';
+import { ItKnowledgeComponent } from '../it-knowledge/it-knowledge.component';
 @Component({
     selector: 'app-cv',
     standalone: true,
     templateUrl: './cv.component.html',
     styleUrl: './cv.component.scss',
-    imports: [BaseInfoComponent, ProjectsComponent, SkillsComponent, LayoutsComponent, ExportComponent]
+    imports: [BaseInfoComponent, ProjectsComponent, SkillsComponent, LayoutsComponent, ExportComponent, ItKnowledgeComponent]
 })
 export class CVComponent implements AfterViewInit {
 
