@@ -1,9 +1,10 @@
 @if (!isEditMode) {
 <div
+  [style.width.px]="inputWidth"
   (dblclick)="switchEditMode()"
-  class="relative change-container min-w-32 flex hover:pr-4 in"
+  class="relative change-container min-w-32 flex hover:pr-4"
 >
-  <div class="inputField">
+  <div class="">
     {{ value }}
   </div>
   <button class="hidden justify-center items-center" (click)="switchEditMode()">
@@ -20,8 +21,9 @@
 <div class="flex relative">
   <input
     type="text"
-    class="w-full animate-pulse min-w-28 inputField"
+    class="w-full animate-pulse min-w-28"
     [ngModel]="value"
+    [style.width.px]="inputWidth"
     (ngModelChange)="onValueChange($event)"
   />
   <button (click)="switchEditMode()">

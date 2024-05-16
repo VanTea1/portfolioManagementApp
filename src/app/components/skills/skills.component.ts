@@ -13,14 +13,14 @@ import { NgClass, NgFor } from '@angular/common';
 })
 export class SkillsComponent {
 
-  skills: ISkill[] = [ { name: 'SEO', level: [true, true, true, true, true, false] },
-    { name: 'Public Speaking', level: [true, true, true, true, true, false] },
-    { name: 'Teamwork', level: [true, true, true, true, true, false] },
-    { name: 'Emotional Intelligence', level: [true, true, true, true, true, false] },
-    { name: 'Sales & Marketing', level: [true, true, true, true, true, false] }];
+  skills: ISkill[] = [ { name: 'SEO', level: [true, true, true, true, true, true, true, true, true, false] },
+    { name: 'Public Speaking', level: [true, true, true, true, false, false, false, false, false, false] },
+    { name: 'Teamwork', level: [true, true, true, true, true, true, true, false, false, false] },
+    { name: 'Emotional Intelligence', level: [true, true, true, true, false, false, false, false, false, false] },
+    { name: 'Sales & Marketing', level: [true, true, true, true, true, true, true, true, false, false] }];
 
   addSkill() {
-    this.skills.push({ name: 'new skill', level: [true, true, true, true, true, false] });
+    this.skills.push({ name: 'new skill', level: [true, true, true, true, true, true, true, true, true, true] });
 }
   deleteSkill(index:number) {
     this.skills.splice(index, 1);
