@@ -1,19 +1,25 @@
 <section class="projects-section flex flex-col gap-4 min-h-5 max-w-[50%]">
   @for(project of projects; track $index){
   <div class="flex flex-col gap-2">
-    <app-edit class="text-xl" [(value)]="project.title"></app-edit>
-    <app-edit class="text-base" type="text" [(value)]="project.description"></app-edit>
-
-<div class="jobDetails">
-    <p>Teamsize: </p> <app-edit class="text-base" type="text" [(value)]="project.teamsize"></app-edit>
-    <p>Role: </p> <app-edit class="text-base" type="text" [(value)]="project.role"></app-edit>
-    <p>Tasks: </p> <app-edit class="text-base" type="text" [(value)]="project.tasks"></app-edit>
-    <p>Environment: </p> <app-edit class="text-base" type="text" [(value)]="project.environment"></app-edit>
-    <p>Framework: </p> <app-edit class="text-base" type="text" [(value)]="project.framework"></app-edit>
-    <p>Buildtools: </p> <app-edit class="text-base" type="text" [(value)]="project.buildtools"></app-edit>
-    <p>Coding Language: </p> <app-edit class="text-base" type="text" [(value)]="project.language"></app-edit>
-    <p>Technical Details: </p> <app-edit class="text-base" type="text" [(value)]="project.technical"></app-edit>
-  </div>
+    <div class="projectHeader">
+      <app-edit class="text-xl headerTitle" [(value)]="project.title"></app-edit>
+      <app-edit class="text-base" type="text" [(value)]="project.description"></app-edit>
+      <div class="projectHeaderDetails">
+      <p>Industry: </p><app-edit class="text-base" type="text" [(value)]="project.industry"></app-edit>
+      <p>Time period: </p><app-edit class="text-base" type="text" [(value)]="project.timeperiod"></app-edit>
+      </div>
+    </div>
+    <h1 class="techDetails">Technical Details</h1>
+    <div class="jobDetails">
+      <p>Teamsize: </p> <app-edit class="text-base" type="text" [(value)]="project.teamsize"></app-edit>
+      <p>Role: </p> <app-edit class="text-base" type="text" [(value)]="project.role"></app-edit>
+      <p>Tasks: </p> <app-edit class="text-base" type="text" [(value)]="project.tasks"></app-edit>
+      <p>Environment: </p> <app-edit class="text-base" type="text" [(value)]="project.environment"></app-edit>
+      <p>Framework: </p> <app-edit class="text-base" type="text" [(value)]="project.framework"></app-edit>
+      <p>Buildtools: </p> <app-edit class="text-base" type="text" [(value)]="project.buildtools"></app-edit>
+      <p>Coding Language: </p> <app-edit class="text-base" type="text" [(value)]="project.language"></app-edit>
+      <p>Technical: </p> <app-edit class="text-base" type="text" [(value)]="project.technical"></app-edit>
+    </div>
 
     @for(key of getProjectTitles(project); track key){
     <table class="relative ml-10 table-auto w-full">
