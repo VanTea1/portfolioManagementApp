@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import html2pdf from 'html2pdf.js';
 import { BaseInfoComponent } from "../base-info/base-info.component";
 import { ProjectsComponent } from "../projects/projects.component";
 import { SkillsComponent } from "../skills/skills.component";
@@ -31,6 +32,16 @@ export class CVComponent implements AfterViewInit {
     onExportCV() {
       this.exportCV.emit();
     }
+  
+   cvContent!: HTMLElement;
+
+  exportAsPDF() {
+    const options = {
+      filename: 'cv.pdf'
+    };
+
+    html2pdf().set(options).from(this.cvContent).save();
+  }
 
 
     //does not work yet

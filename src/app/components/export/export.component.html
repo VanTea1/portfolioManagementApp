@@ -1,1 +1,116 @@
-<button class="exportButton" (click)="exportAsPDF()">Export to PDF</button>
+<div class="cv">
+  <section class="base-info">
+    <div class="flex justify-around">
+      <div class="flex flex-col gap-3 max-w-[70%]">
+        <div class="text-xl font-bold max-w-full" type="text">
+          {{ userName }}
+        </div>
+        <div class="text-base w-auto max-w-full" type="text">
+          {{ position }}
+        </div>
+
+        <div class="text-base w-auto max-w-full" type="text">
+          {{ description }}
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2 justify-center items-center">
+        <div class="change-btn justify-center items-center">
+          <img
+            class="w-28 h-28 border p-1"
+            [src]="avatarUrl"
+            alt="userAvatar"
+          />
+          <input type="file" #fileInput style="display: none" />
+        </div>
+      </div>
+    </div>
+
+    <ul class="flex justify-around mt-2 gap-3 text-sm contacts-wrapper">
+      <li class="flex items-center gap-1">
+        <svg class="fill-purple-500" width="20" height="20">
+          <use href="./assets/sprite.svg#icon-envelop"></use>
+        </svg>
+        <div class="text-base w-auto">{{ userInfo.mail }}</div>
+      </li>
+      <li class="flex items-center gap-1">
+        <svg class="fill-purple-500" width="20" height="20">
+          <use href="./assets/sprite.svg#icon-mobile"></use>
+        </svg>
+        <div class="text-base w-auto">{{ userInfo.tel }}</div>
+      </li>
+      <li class="flex items-center gap-1">
+        <svg class="fill-purple-500" width="20" height="20">
+          <use href="./assets/sprite.svg#icon-location"></use>
+        </svg>
+        <div class="text-base w-auto">{{ userInfo.address }}</div>
+      </li>
+      <li class="flex items-center gap-1">
+        <svg class="fill-purple-500" width="20" height="20">
+          <use href="./assets/sprite.svg#icon-linkedin"></use>
+        </svg>
+        <div class="text-base w-auto">{{ userInfo.linkedIn }}</div>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<div class="section">
+  <div class="section-title">Skills</div>
+  <section class="skills-section max-w-[50%]">
+    <div
+      *ngFor="let skill of skills; let idxSkill = index"
+      class="skill flex justify-between items-center"
+    >
+      <div class="relative">
+        <div class="relative text-base w-auto max-w-[50%]">
+          {{ skill.name }}
+        </div>
+      </div>
+      <div class="flex space-x-1">
+        <div *ngFor="let lvl of skill.level; let idxLvl = index">
+          <div
+            [ngClass]="{ checked: lvl }"
+            class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+          >
+            <div class="checkmark"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="section">
+  <div class="section-title">Projects</div>
+  <section class="projects-section flex flex-col gap-4 min-h-5 max-w-[50%]">
+    @for(project of projects; track $index){
+    <div class="flex flex-col gap-2">
+      <div class="text-xl" [(value)]="project.title"></div>
+      <div class="text-base" type="text" [(value)]="project.description"></div>
+      @for(key of getProjectTitles(project); track key){
+      <table class="relative ml-10 table-auto w-full">
+        <tbody class="text-sm">
+          <tr>
+            <td class="text-right max-w-40">
+              <div
+                class="text-right text-base w-auto"
+                type="text"
+                [(value)]="project[key][0]"
+              ></div>
+            </td>
+            <td class="pl-4">
+              <div
+                class="text-base w-auto max-w-96"
+                type="text"
+                [(value)]="project[key][1]"
+              ></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      }
+    </div>
+    }
+  </section>
+</div>

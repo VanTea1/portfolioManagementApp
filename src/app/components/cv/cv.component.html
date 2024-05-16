@@ -1,9 +1,11 @@
 <div class="wrapper">
   <div class="layoutsAndButtons">
     <div class="buttons">
-      <app-export class="exportButton" [cvContent]="exportContent"></app-export>
+      <button class="exportButton" (click)="exportAsPDF()">
+        Export to PDF
+      </button>
     </div>
-    
+
     <div class="layoutsWrapper">
       <div class="layoutChoices">
         <div class="layout-title">Layouts</div>
@@ -28,5 +30,4 @@
       <app-projects></app-projects>
     </div>
   </div>
-
 </div>

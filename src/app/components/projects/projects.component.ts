@@ -16,7 +16,10 @@ export class ProjectsComponent {
   projectToAdd: IProject = { id: Math.floor(Math.random() * 1000), title: 'type title', description: 'type description' }
 
     addProject() {
-    this.projects.push(this.projectToAdd);
+      this.projects.push(this.projectToAdd);
+      console.log('====================================');
+      console.log(this.projects);
+      console.log('====================================');
 }
   deleteProject(index:number) {
     this.projects.splice(index, 1);

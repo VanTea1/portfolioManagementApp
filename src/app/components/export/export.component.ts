@@ -1,10 +1,11 @@
+import { NgClass, NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-export',
   standalone: true,
-  imports: [],
+  imports: [NgClass, NgFor],
   templateUrl: './export.component.html',
   styleUrl: './export.component.scss'
 })
