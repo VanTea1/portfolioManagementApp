@@ -29,7 +29,7 @@ export class ProjectsComponent {
     this.projects.splice(index, 1);
   }
   getProjectTitles(project: IProject): string[] {
-    return Object.keys(project).filter(key => key !== 'id' && key !== 'title' && key !== 'description');
+    return Object.keys(project).filter(key => key !== 'id' && key !== 'title' && key !== 'description' && key !== 'teamsize' && key !== 'role' && key !== 'framework' && key !== 'buildtools' && key !== 'language' && key !== 'technical' && key !== 'tasks' && key !== 'environment');
   }
   addProjectField(project:IProject) {
     const key = Math.floor(Math.random() * 1000).toString();
