@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "react-scripts build && cp _redirects dist/to-do-list",
+    "build": "ng build && cp _redirects dist/to-do-list",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
