@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && cp _redirects dist/to-do-list",
+    "build": "ng build --output-path=dist/to-do-list && npm run copy-redirects",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "copy-redirects": "copyfiles _redirects dist/to-do-list"
   },
   "private": true,
   "dependencies": {
