@@ -3,7 +3,7 @@
     *ngFor="let skill of skills; let idxSkill = index"
     class="skill flex justify-between items-center"
   >
-    <div class="relative">
+    <div class="relative skill-name-container">
       <app-edit
         class="relative text-base w-auto max-w-[50%]"
         type="text"
@@ -23,7 +23,7 @@
         </svg>
       </button>
     </div>
-    <div class="flex space-x-1">
+    <div class="flex space-x-1 checkboxes-container">
       <div *ngFor="let lvl of skill.level; let idxLvl = index">
         <label
           class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
