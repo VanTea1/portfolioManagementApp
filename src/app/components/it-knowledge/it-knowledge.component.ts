@@ -13,20 +13,23 @@ import { NgClass, NgFor } from '@angular/common';
 export class ItKnowledgeComponent {
       
        knowledge: IKnowledge[] = [
-        { category: 'Frameworks', items: 'Angular' },
-        { category: 'Databases', items: 'mySQL' },
-        { category: 'Build Systems', items: 'npm' },
-        { category: 'Tools', items: 'Git, Figma' },
-        { category: 'OS', items: 'Windows, Linux(Ubuntu)' },
-        { category: 'Dev Environment', items: 'VS Code' },
-        { category: 'Languages', items: 'JavaScript, TypeScript, Java' },
+        { index: 0, category: 'Frameworks', items: 'Angular' },
+        { index: 1, category: 'Databases', items: 'mySQL' },
+        { index: 2, category: 'Build Systems', items: 'npm' },
+        { index: 3, category: 'Tools', items: 'Git, Figma' },
+        { index: 4, category: 'OS', items: 'Windows, Linux(Ubuntu)' },
+        { index: 5, category: 'Dev Environment', items: 'VS Code' },
+        { index: 6, category: 'Languages', items: 'JavaScript, TypeScript, Java' },
       ];
 
-    addKnowledge() {
-        this.knowledge.push({ category: 'new skill', items: 'new item' });
-    }
-    deleteKnowledge(index: number) {
+      addKnowledge() {
+        const newIndex = this.knowledge.length; 
+        this.knowledge.push({ index: newIndex, category: 'New Category', items: 'New Item' });
+      }
+    
+      deleteKnowledge(index: number) {
         this.knowledge.splice(index, 1);
-    }
+        this.knowledge.forEach((item, i) => item.index = i);
+      }
 }
 

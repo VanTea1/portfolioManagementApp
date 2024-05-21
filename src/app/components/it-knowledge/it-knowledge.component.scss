@@ -1,17 +1,13 @@
-.base-info {
-  gap: 20px;
-}
-
 .details {
   display: grid;
+  position: relative;
   grid-template-columns: max-content 1fr;
-  gap: 8px;
+  gap: 4px;
   margin-bottom: 15px;
   margin-top: 10px;
 }
 
-.details p {
+.category{
   font-weight: bold;
 }
-
 
