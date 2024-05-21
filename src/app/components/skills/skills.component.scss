@@ -5,16 +5,32 @@
 .skills-section {
   @apply pb-5;
 }
-// .skills-section :hover ~ .add-skill {
-//   @apply block;
-// }
-.skills-section {
-  &:hover {
-    button {
-      display: flex;
-    }
-  }
+
+.skills-section:hover .add-skill {
+  @apply block;
 }
+
+.skill {
+  @apply flex justify-between items-center;
+}
+
+.skill-name-container {
+  @apply flex-1;
+  min-width: 200px; 
+  max-width: 300px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.checkboxes-container {
+  @apply flex space-x-1;
+}
+
+.label input:checked ~ .checkmark {
+  @apply bg-slate-500 rounded-full w-2 h-2;
+}
+
 .checked ~ .checkmark {
   @apply bg-slate-500 rounded-full w-2 h-2;
 }

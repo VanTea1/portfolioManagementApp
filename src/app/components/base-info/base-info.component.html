@@ -1,6 +1,6 @@
 <section class="base-info">
   <div class="flex justify-around">
-<div>
+    <div>
       <div class="flex flex-col gap-3 max-w-[70%]">
         <app-edit class="text-xl font-bold max-w-full name" type="text" [(value)]="userName"
           [inputWidth]="userName.length * 10"></app-edit>
@@ -8,29 +8,27 @@
           [inputWidth]="position.length * 9"></app-edit>
       </div>
 
-      <div class="details">
-        <p>Main Emphasis:</p>
-        <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="mainEmphasis"
-          [inputWidth]="position.length * 9"></app-edit>
+      <div *ngFor="let info of baseInfo" class="details">
+        <app-edit class="category" type="text" [(value)]="info.category" [inputWidth]="190">
+        </app-edit>
+        <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="info.value"
+          [inputWidth]="info.value.length * 9"></app-edit>
+        <button class="absolute top-[2px] left-[-14px]" (click)="deleteBaseInfo(info.index)">
+          <svg class="fill-purple-500 hover:scale-125 transition-all" width="16" height="16">
+            <use href="./assets/sprite.svg#icon-bin"></use>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="add-skill flex justify-center items-center text-purple-500 uppercase gap-1 hover:scale-125 transition-all mt-2"
+        (click)="addBaseInfo()">
+        <svg class="fill-purple-500" width="20" height="20">
+          <use href="./assets/sprite.svg#icon-plus"></use>
+        </svg>
+        Add Info
+      </button>
 
-        <p>Availability:</p>
-        <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="availability"
-          [inputWidth]="position.length * 9"></app-edit>
-
-        <p>Training:</p>
-        <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="training"
-          [inputWidth]="position.length * 9"></app-edit>
-
-        <p>Languages:</p>
-        <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="languages"
-          [inputWidth]="position.length * 9"></app-edit>
-
-        <p>Role:</p>
-        <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="role"
-          [inputWidth]="position.length * 9"></app-edit>
-     </div>
-
-  </div>
+    </div>
     <div class="flex flex-col gap-2 justify-center items-center">
       @if(avatarUrl){
       <div class="change-btn justify-center items-center">
