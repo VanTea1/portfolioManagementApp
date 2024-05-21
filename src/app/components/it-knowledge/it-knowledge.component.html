@@ -1,30 +1,18 @@
-<div class="details">
-    <p>Coding Languages:</p>
-    <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="languages"
-    [inputWidth]="languages.length * 9"></app-edit>
-
-    <p>Frameworks:</p>  
-    <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="frameworks"
-    [inputWidth]="frameworks.length * 9"></app-edit>
-
-    <p>Databases:</p>  
-    <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="databases"
-    [inputWidth]="databases.length * 9"></app-edit>
-
-    <p>Build-Systems:</p>
-    <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="buildSystems"
-    [inputWidth]="buildSystems.length * 9"></app-edit>
-
-    <p>Tools:</p>
-    <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="tools"
-    [inputWidth]="tools.length * 9"></app-edit>
-
-    <p>Operating System:</p>
-    <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="os"
-    [inputWidth]="os.length * 9"></app-edit>
-
-   <p>Development Environments:</p>
-   <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="devEnvironment"
-   [inputWidth]="devEnvironment.length * 9"></app-edit>
-
-  </div>
+<div>
+    <div class="details-container">
+        <div *ngFor="let item of knowledge; let i = index" class="details">
+            <p>{{ item.category }}:</p>
+            <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="item.items"
+                [inputWidth]="item.items.length * 9">
+            </app-edit>
+        </div>
+        <button
+            class="add-skill flex justify-center items-center text-purple-500 uppercase gap-1 hover:scale-125 transition-all mt-2"
+            (click)="addKnowledge()">
+            <svg class="fill-purple-500" width="20" height="20">
+                <use href="./assets/sprite.svg#icon-plus"></use>
+            </svg>
+            Add Skill
+        </button>
+    </div>
+</div>

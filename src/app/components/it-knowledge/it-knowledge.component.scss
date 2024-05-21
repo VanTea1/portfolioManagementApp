@@ -1,8 +1,17 @@
+.base-info {
+  gap: 20px;
+}
+
 .details {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 8px;
-    margin-bottom: 15px;
-    margin-top: 10px;
-    width: 400px;
-  }
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.details p {
+  font-weight: bold;
+}
+
+
