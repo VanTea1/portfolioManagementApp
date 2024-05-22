@@ -3,26 +3,26 @@
     *ngFor="let skill of skills; let idxSkill = index"
     class="skill flex justify-between items-center"
   >
-    <div class="relative skill-name-container">
-      <app-edit
-        class="relative text-base w-auto max-w-[50%]"
-        type="text"
-        [(value)]="skill.name"
-        [inputWidth]="skill.name.length * 9"
-      ></app-edit>
-      <button
-        class="absolute top-[2px] left-[-14px]"
-        (click)="deleteSkill(idxSkill)"
+  <div class="relative skill-name-container hover-trigger">
+    <app-edit
+      class="relative text-base w-auto max-w-[50%]"
+      type="text"
+      [(value)]="skill.name"
+      [inputWidth]="skill.name.length * 9"
+    ></app-edit>
+    <button
+      class="delete-button absolute top-0 right-0 hidden"
+      (click)="deleteSkill(idxSkill)"
+    >
+      <svg
+        class="fill-purple-500 hover:scale-125 transition-all"
+        width="16"
+        height="16"
       >
-        <svg
-          class="fill-purple-500 hover:scale-125 transition-all"
-          width="16"
-          height="16"
-        >
-          <use href="./assets/sprite.svg#icon-bin"></use>
-        </svg>
-      </button>
-    </div>
+        <use href="./assets/sprite.svg#icon-bin"></use>
+      </svg>
+    </button>
+  </div>
     <div class="flex space-x-1 checkboxes-container">
       <div *ngFor="let lvl of skill.level; let idxLvl = index">
         <label

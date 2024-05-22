@@ -1,7 +1,3 @@
-// .label input:checked ~ .checkmark {
-//   @apply bg-slate-500 rounded-full w-2 h-2;
-// }
-
 .skills-section {
   @apply pb-5;
 }
@@ -15,12 +11,21 @@
 }
 
 .skill-name-container {
-  @apply flex-1;
+  @apply flex-1 relative;
   min-width: 200px; 
   max-width: 300px; 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+
+.skill-name-container:hover .delete-button {
+  display: block;
+}
+
+.delete-button {
+  @apply hidden;
 }
 
 .checkboxes-container {

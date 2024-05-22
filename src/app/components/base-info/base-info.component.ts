@@ -17,7 +17,7 @@ export class BaseInfoComponent {
   baseInfo: IBaseInfo[] = [
     { index: 0, category: 'Main Emphasis', value: 'Java' },
     { index: 1, category: 'Availability', value: 'immediately' },
-    { index: 2, category: 'Training', value: 'school' },
+    { index: 2, category: 'Education', value: 'school' },
     { index: 3, category: 'Languages', value: 'English, German, ...' },
     { index: 4, category: 'Role', value: 'developer' }
   ];

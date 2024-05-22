@@ -93,10 +93,18 @@
   position: relative;
   grid-template-columns: max-content 1fr;
   gap: 4px;
-  margin-bottom: 15px;
-  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+
+.nameContainer{
+  margin-bottom: 25px;
 }
 
 .category{
   font-weight: bold;
+}
+
+.hover-trigger:hover .delete-button {
+  display: block;
 }
