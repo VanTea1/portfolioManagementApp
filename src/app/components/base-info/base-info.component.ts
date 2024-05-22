@@ -19,7 +19,9 @@ export class BaseInfoComponent {
     { index: 1, category: 'Availability', value: 'immediately' },
     { index: 2, category: 'Education', value: 'school' },
     { index: 3, category: 'Languages', value: 'English, German, ...' },
-    { index: 4, category: 'Role', value: 'developer' }
+    { index: 4, category: 'Role', value: 'developer' },
+    { index: 5, category: 'Industry', value: 'Medicine' },
+    { index: 6, category: 'Year of birth', value: '1987' }
   ];
 
   userInfo: IUser = {
