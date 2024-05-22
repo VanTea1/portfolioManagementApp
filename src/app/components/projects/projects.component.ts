@@ -12,11 +12,11 @@ import { IProject } from '../../models/Project';
 export class ProjectsComponent {
 
   projects: IProject[] = [{id:1, title:'Project Medical',description:'This project can....', industry:'Medical field', timeperiod:'3 months', teamsize: '1', role: 'developer', tasks: 'coding', environment: "VS Code",
-    framework:"Angular", buildtools:"npm", language:"TypeScript", technical:"Win10"
+    framework:"Angular", buildtools:"npm", language:"TypeScript", os:"Win10"
    }];
 
   projectToAdd: IProject = { id: Math.floor(Math.random() * 1000), title: 'Project Medical', description: 'This project can....', industry:'Medical field', timeperiod:'3 months', teamsize: '1', role: 'developer', tasks: 'coding', environment: "VS Code",
-  framework:"Angular", buildtools:"npm", language:"TypeScript", technical:"Win10"}
+  framework:"Angular", buildtools:"npm", language:"TypeScript", os:"Win10"}
 
 
   
@@ -27,7 +27,7 @@ export class ProjectsComponent {
     this.projects.splice(index, 1);
   }
   getProjectTitles(project: IProject): string[] {
-    return Object.keys(project).filter(key => key !== 'id' && key !== 'title' && key !== 'description' && key !== 'industry' && key !== 'timeperiod' && key !== 'teamsize' && key !== 'role' && key !== 'framework' && key !== 'buildtools' && key !== 'language' && key !== 'technical' && key !== 'tasks' && key !== 'environment');
+    return Object.keys(project).filter(key => key !== 'id' && key !== 'title' && key !== 'description' && key !== 'industry' && key !== 'timeperiod' && key !== 'teamsize' && key !== 'role' && key !== 'framework' && key !== 'buildtools' && key !== 'language' && key !== 'os' && key !== 'tasks' && key !== 'environment');
   }
   addProjectField(project:IProject) {
     const key = Math.floor(Math.random() * 1000).toString();

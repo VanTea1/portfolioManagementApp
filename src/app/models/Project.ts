@@ -11,7 +11,7 @@ export interface IProject {
     framework: string;
     buildtools: string;
     language: string;
-    technical: string;
+    os: string;
     [key: string]: any;
 }
 
