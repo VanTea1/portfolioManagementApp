@@ -33,7 +33,7 @@
             <app-edit class="text-base w-auto max-w-96" type="text" [(value)]="project[key][1]"></app-edit>
           </td>
 
-          <button class="absolute top-[2px] left-[-14px] hidden" (click)="deleteProjectField(key, project)">
+          <button class="absolute top-[2px] left-[-14px]" (click)="deleteProjectField(key, project)">
             <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
               <use href="./assets/sprite.svg#icon-bin"></use>
             </svg>
@@ -42,7 +42,7 @@
       </tbody>
     </table>
     }
-    <button class="hidden items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
+    <button class="items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
       (click)="addProjectField(project)">
       <svg class="fill-purple-500" width="14" height="14">
         <use href="./assets/sprite.svg#icon-plus"></use>
@@ -50,7 +50,7 @@
       Field
     </button>
 
-    <button class="hidden text-base items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
+    <button class="text-base items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
       (click)="deleteProject($index)">
       <svg class="fill-purple-500" width="16" height="16">
         <use href="./assets/sprite.svg#icon-bin"></use>
@@ -61,7 +61,7 @@
   }
   <div class="flex justify-center items-center">
     <button
-      class="add-project hidden justify-center items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
+      class="add-project justify-center items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
       (click)="addProject()">
       <svg class="fill-purple-500" width="20" height="20">
         <use href="./assets/sprite.svg#icon-plus"></use>
