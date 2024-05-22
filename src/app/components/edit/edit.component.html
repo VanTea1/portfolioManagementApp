@@ -1,40 +1,39 @@
 @if (!isEditMode) {
-<div
-  [style.width.px]="inputWidth"
-  (dblclick)="switchEditMode()"
-  class="relative change-container min-w-32 flex hover:pr-4"
->
-  <div class="">
-    {{ value }}
+  <div
+    [style.width.px]="inputWidth"
+    (dblclick)="switchEditMode()"
+    class="relative change-container min-w-32 flex items-center"
+  >
+    <div class="flex-grow">
+      {{ value }}
+    </div>
+    <button class="edit-button hidden justify-center items-center" (click)="switchEditMode()">
+      <svg
+        class="fill-purple-500 hover:scale-125 transition-all"
+        width="16"
+        height="16"
+      >
+        <use href="./assets/sprite.svg#icon-pencil"></use>
+      </svg>
+    </button>
   </div>
-  <button class="hidden justify-center items-center" (click)="switchEditMode()">
-    <svg
-      class="absolute right-[-10px] fill-purple-500 top-0 hover:scale-125 transition-all"
-      width="16"
-      height="16"
-    >
-      <use href="./assets/sprite.svg#icon-pencil"></use>
-    </svg>
-  </button>
-</div>
-}@else{
-<div class="flex relative">
-  <input
+  }@else{
+  <div class="flex relative">
+    <input
     type="text"
     class="w-full animate-pulse min-w-28"
     [ngModel]="value"
     [style.width.px]="inputWidth"
     (ngModelChange)="onValueChange($event)"
   />
-  <button (click)="switchEditMode()">
-    <svg
-      class="absolute right-[-16] fill-purple-500 top-0 hover:scale-125 transition-all z-10"
-      width="20"
-      height="20"
-    >
-      <use href="./assets/sprite.svg#icon-checkmark"></use>
-    </svg>
-  </button>
-</div>
-
-}
+    <button class="confirm-button" (click)="switchEditMode()">
+      <svg
+        class="fill-purple-500 hover:scale-125 transition-all z-10"
+        width="20"
+        height="20"
+      >
+        <use href="./assets/sprite.svg#icon-checkmark"></use>
+      </svg>
+    </button>
+  </div>
+  }
