@@ -5,17 +5,21 @@ import { SkillsComponent } from "../skills/skills.component";
 import { LayoutsComponent } from "../layouts/layouts.component";
 import { ExportComponent} from '../export/export.component';
 import { ItKnowledgeComponent } from '../it-knowledge/it-knowledge.component';
+import { LinkedinCallbackComponent } from "../linkedin-callback/linkedin-callback.component";
 @Component({
     selector: 'app-cv',
     standalone: true,
     templateUrl: './cv.component.html',
     styleUrl: './cv.component.scss',
-    imports: [BaseInfoComponent, ProjectsComponent, SkillsComponent, LayoutsComponent, ExportComponent, ItKnowledgeComponent]
+    imports: [BaseInfoComponent, ProjectsComponent, SkillsComponent, LayoutsComponent, ExportComponent, ItKnowledgeComponent, LinkedinCallbackComponent]
 })
 export class CVComponent implements AfterViewInit {
 
     @ViewChild('exportContent', { static: false }) exportContent!: ElementRef<any>;
-    @Output() exportCV = new EventEmitter<void>();
+  @Output() exportCV = new EventEmitter<void>();
+  
+  clientId = '783sd9od1azet2';
+  redirectUri = 'http://localhost:4200/auth/linkedin/callback';
 
     constructor(private elementRef: ElementRef) { }
 
@@ -34,6 +38,9 @@ export class CVComponent implements AfterViewInit {
     }
 
 
-
+ loginWithLinkedIn() {
+    const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${this.clientId}&redirect_uri=${this.redirectUri}&scope=liteprofile%20emailaddress%20w_member_social`;
+   window.location.href = authUrl;
+  }
 
 }

@@ -2,8 +2,11 @@
   <div class="layoutsAndButtons">
     <div class="buttons">
       <app-export class="exportButton" [cvContent]="exportContent"></app-export>
+      <button class="exportButton" (click)="loginWithLinkedIn()">
+        LinkedIn autofill
+      </button>
     </div>
-    
+
     <div class="layoutsWrapper">
       <div class="layoutChoices">
         <div class="layout-title">Layouts</div>
@@ -22,7 +25,7 @@
       <div class="section-title">IT-Knowledge</div>
       <app-it-knowledge></app-it-knowledge>
     </div>
-    
+
     <div class="section">
       <div class="section-title">Main-Skills</div>
       <app-skills></app-skills>
@@ -33,5 +36,4 @@
       <app-projects></app-projects>
     </div>
   </div>
-
 </div>
