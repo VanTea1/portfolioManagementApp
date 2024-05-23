@@ -5,42 +5,40 @@
       <app-edit class="text-xl headerTitle" [(value)]="project.title"></app-edit>
       <app-edit class="text-base" type="text" [(value)]="project.description"></app-edit>
       <div class="projectHeaderDetails">
-      <p>Industry: </p><app-edit class="text-base" type="text" [(value)]="project.industry"></app-edit>
-      <p>Time period: </p><app-edit class="text-base" type="text" [(value)]="project.timeperiod"></app-edit>
-      <p>Teamsize: </p> <app-edit class="text-base" type="text" [(value)]="project.teamsize"></app-edit>
-      <p>Role: </p> <app-edit class="text-base" type="text" [(value)]="project.role"></app-edit>
+        <p class="jobDetailsName">Industry </p><app-edit class="text-base" type="text" [(value)]="project.industry"></app-edit>
+        <p class="jobDetailsName">Time period </p><app-edit class="text-base" type="text" [(value)]="project.timeperiod"></app-edit>
+        <p class="jobDetailsName">Teamsize </p> <app-edit class="text-base" type="text" [(value)]="project.teamsize"></app-edit>
+        <p class="jobDetailsName">Role </p> <app-edit class="text-base" type="text" [(value)]="project.role"></app-edit>
       </div>
     </div>
+    <button class="items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
+    (click)="addProjectField(project)">
+    <svg class="fill-purple-500" width="14" height="14">
+      <use href="./assets/sprite.svg#icon-plus"></use>
+    </svg>
+    Field
+  </button>
     <h1 class="techDetails">Technical Environment</h1>
     <div class="jobDetails">
 
-      <p>Tasks: </p> <app-edit class="text-base" type="text" [(value)]="project.tasks"></app-edit>
-      <p>Environment: </p> <app-edit class="text-base" type="text" [(value)]="project.environment"></app-edit>
-      <p>Framework: </p> <app-edit class="text-base" type="text" [(value)]="project.framework"></app-edit>
-      <p>Buildtools: </p> <app-edit class="text-base" type="text" [(value)]="project.buildtools"></app-edit>
-      <p>Coding Language: </p> <app-edit class="text-base" type="text" [(value)]="project.language"></app-edit>
-      <p>Operating System: </p> <app-edit class="text-base" type="text" [(value)]="project.os"></app-edit>
+      <p class="jobDetailsName">Tasks </p> <app-edit class="text-base" type="text" [(value)]="project.tasks"></app-edit>
+      <p class="jobDetailsName">Environment </p> <app-edit class="text-base" type="text" [(value)]="project.environment"></app-edit>
+      <p class="jobDetailsName">Framework </p> <app-edit class="text-base" type="text" [(value)]="project.framework"></app-edit>
+      <p class="jobDetailsName">Buildtools </p> <app-edit class="text-base" type="text" [(value)]="project.buildtools"></app-edit>
+      <p class="jobDetailsName">Coding Language </p> <app-edit class="text-base" type="text" [(value)]="project.language"></app-edit>
+      <p class="jobDetailsName">Operating System </p> <app-edit class="text-base" type="text" [(value)]="project.os"></app-edit>
     </div>
 
     @for(key of getProjectTitles(project); track key){
-    <table class="relative ml-10 table-auto w-full">
-      <tbody class="text-sm">
-        <tr>
-          <td class="text-right max-w-40">
-            <app-edit class="text-right text-base w-auto" type="text" [(value)]="project[key][0]"></app-edit>
-          </td>
-          <td class="pl-4">
-            <app-edit class="text-base w-auto max-w-96" type="text" [(value)]="project[key][1]"></app-edit>
-          </td>
-
-          <button class="absolute top-[2px] left-[-14px]" (click)="deleteProjectField(key, project)">
-            <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
-              <use href="./assets/sprite.svg#icon-bin"></use>
-            </svg>
-          </button>
-        </tr>
-      </tbody>
-    </table>
+    <div class="jobDetails">
+      <app-edit class="text-base jobDetailsName" type="text" [(value)]="project[key][0]"></app-edit>
+      <app-edit class="text-base" type="text" [(value)]="project[key][1]"></app-edit>
+    </div>
+    <button class="absolute top-[2px] left-[-14px]" (click)="deleteProjectField(key, project)">
+      <svg class="fill-purple-500 hover:scale-125" width="16" height="16">
+        <use href="./assets/sprite.svg#icon-bin"></use>
+      </svg>
+    </button>
     }
     <button class="items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
       (click)="addProjectField(project)">
