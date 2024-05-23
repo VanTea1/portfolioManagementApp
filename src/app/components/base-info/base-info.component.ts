@@ -13,6 +13,7 @@ import { NgClass, NgFor } from '@angular/common';
 export class BaseInfoComponent {
   userName: string = 'Enter name';
   position: string = 'Business Development Manager';
+  description: string = 'A software developer with innovative ideas and a love for coding...';
 
   baseInfo: IBaseInfo[] = [
     { index: 0, category: 'Main Emphasis', value: 'Java' },
