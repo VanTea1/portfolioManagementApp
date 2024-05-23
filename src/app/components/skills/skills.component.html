@@ -1,19 +1,39 @@
 <section class="skills-section max-w-[50%]">
-  <div *ngFor="let skill of skills; let idxSkill = index" class="skill flex justify-between items-center">
-    <div class="relative skill-name-container hover-trigger">
-      <app-edit class="relative text-base w-auto max-w-[50%]" type="text" [(value)]="skill.name"
-        [inputWidth]="skill.name.length * 9"></app-edit>
-      <button class="delete-button absolute top-0 left-0 hidden" (click)="deleteSkill(idxSkill)">
-        <svg class="fill-purple-500 hover:scale-125 transition-all" width="16" height="16">
+  <div
+    *ngFor="let skill of skills; let idxSkill = index"
+    class="skill flex justify-between items-center"
+  >
+    <div class="relative truncate max-w-40 skill-name-container hover-trigger">
+      <app-edit
+        class="relative text-base w-auto max-w-[50%]"
+        type="text"
+        [(value)]="skill.name"
+        [inputWidth]="skill.name.length * 9"
+      ></app-edit>
+      <button
+        class="delete-button absolute top-0 left-0 hidden"
+        (click)="deleteSkill(idxSkill)"
+      >
+        <svg
+          class="fill-purple-500 hover:scale-125 transition-all"
+          width="16"
+          height="16"
+        >
           <use href="./assets/sprite.svg#icon-bin"></use>
         </svg>
       </button>
     </div>
     <div class="flex space-x-1 checkboxes-container">
       <div *ngFor="let lvl of skill.level; let idxLvl = index">
-        <label class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center">
-          <input (click)="handleCheckboxClick(idxSkill, idxLvl)" [ngClass]="{ checked: lvl }" class="hidden"
-            type="checkbox" />
+        <label
+          class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center"
+        >
+          <input
+            (click)="handleCheckboxClick(idxSkill, idxLvl)"
+            [ngClass]="{ checked: lvl }"
+            class="hidden"
+            type="checkbox"
+          />
           <div class="checkmark"></div>
         </label>
       </div>
@@ -21,7 +41,8 @@
   </div>
   <button
     class="add-skill flex justify-center items-center text-purple-500 uppercase gap-1 hover:scale-125 transition-all mt-2"
-    (click)="addSkill()">
+    (click)="addSkill()"
+  >
     <svg class="fill-purple-500" width="20" height="20">
       <use href="./assets/sprite.svg#icon-plus"></use>
     </svg>
