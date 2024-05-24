@@ -6,22 +6,22 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.scss'
+  styleUrl: './edit.component.scss',
 })
 export class EditComponent {
-     @Input() value : string = '';
-     @Input() inputWidth : number = 0;
-    @Output() valueChange = new EventEmitter<string>();
-    
+  @Input() value: string = '';
+  @Input() inputWidth: number = 0;
+  @Input() maxLength: number = 100;
+  @Output() valueChange = new EventEmitter<string>();
+
   onValueChange(model: string) {
-        this.value = model;
-        this.valueChange.emit(model);
+    this.value = model;
+    this.valueChange.emit(model);
   }
-  
-    isEditMode: boolean = false;
+
+  isEditMode: boolean = false;
 
   switchEditMode() {
     this.isEditMode = !this.isEditMode;
   }
-
 }

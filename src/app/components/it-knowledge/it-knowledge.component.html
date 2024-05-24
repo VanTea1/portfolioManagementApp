@@ -1,13 +1,14 @@
 <section>
     <div>
-        <div class="details-container">
+        <div class="details-container pl-2">
             <div *ngFor="let item of knowledge; let i = index" class="details hover-trigger">
-                <app-edit class="category" type="text" [(value)]="item.category" [inputWidth]="190">
+                <app-edit class="category" type="text" [(value)]="item.category" [inputWidth]="190" [maxLength]="25">
                 </app-edit>
                 <app-edit class="text-base w-auto max-w-full" type="text" [(value)]="item.items"
                     [inputWidth]="item.items.length * 9">
                 </app-edit>
-                <button class="delete-button absolute top-[2px] left-[-14px] hidden" (click)="deleteKnowledge(item.index)">
+                <button class="delete-button absolute top-[2px] left-[-20px] hidden"
+                    (click)="deleteKnowledge(item.index)">
                     <svg class="fill-purple-500 hover:scale-125 transition-all hover" width="16" height="16">
                         <use href="./assets/sprite.svg#icon-bin"></use>
                     </svg>

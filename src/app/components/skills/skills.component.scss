@@ -2,19 +2,17 @@
   @apply pb-5;
 }
 
-
 .skill {
   @apply flex justify-between items-center;
 }
 
 .skill-name-container {
   @apply flex-1 relative;
-  min-width: 200px; 
-  max-width: 300px; 
+  min-width: 200px;
+  max-width: 300px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 
 .skill-name-container:hover .delete-button {
   display: block;
@@ -38,5 +36,4 @@
 
 .delete-button {
   @apply hidden;
-  left: -14px; 
 }
