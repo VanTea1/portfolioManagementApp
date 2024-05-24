@@ -5,28 +5,36 @@
       <app-edit class="headerTitle" [(value)]="project.title"></app-edit>
       <app-edit class="text-base" type="text" [(value)]="project.description"></app-edit>
       <div class="projectHeaderDetails">
-        <p class="jobDetailsName">Industry </p><app-edit class="text-base" type="text" [(value)]="project.industry"></app-edit>
-        <p class="jobDetailsName">Time period </p><app-edit class="text-base" type="text" [(value)]="project.timeperiod"></app-edit>
-        <p class="jobDetailsName">Teamsize </p> <app-edit class="text-base" type="text" [(value)]="project.teamsize"></app-edit>
+        <p class="jobDetailsName">Industry </p><app-edit class="text-base" type="text"
+          [(value)]="project.industry"></app-edit>
+        <p class="jobDetailsName">Time period </p><app-edit class="text-base" type="text"
+          [(value)]="project.timeperiod"></app-edit>
+        <p class="jobDetailsName">Teamsize </p> <app-edit class="text-base" type="text"
+          [(value)]="project.teamsize"></app-edit>
         <p class="jobDetailsName">Role </p> <app-edit class="text-base" type="text" [(value)]="project.role"></app-edit>
       </div>
     </div>
     <button class="items-center text-purple-500 uppercase gap-1 hover:scale-105 transition-all"
-    (click)="addProjectField(project)">
-    <svg class="fill-purple-500" width="14" height="14">
-      <use href="./assets/sprite.svg#icon-plus"></use>
-    </svg>
-    Field
-  </button>
+      (click)="addProjectField(project)">
+      <svg class="fill-purple-500" width="14" height="14">
+        <use href="./assets/sprite.svg#icon-plus"></use>
+      </svg>
+      Field
+    </button>
     <p class="techDetails">Technical Environment</p>
     <div class="jobDetails">
 
       <p class="jobDetailsName">Tasks </p> <app-edit class="text-base" type="text" [(value)]="project.tasks"></app-edit>
-      <p class="jobDetailsName">Environment </p> <app-edit class="text-base" type="text" [(value)]="project.environment"></app-edit>
-      <p class="jobDetailsName">Framework </p> <app-edit class="text-base" type="text" [(value)]="project.framework"></app-edit>
-      <p class="jobDetailsName">Buildtools </p> <app-edit class="text-base" type="text" [(value)]="project.buildtools"></app-edit>
-      <p class="jobDetailsName">Coding Language </p> <app-edit class="text-base" type="text" [(value)]="project.language"></app-edit>
-      <p class="jobDetailsName">Operating System </p> <app-edit class="text-base" type="text" [(value)]="project.os"></app-edit>
+      <p class="jobDetailsName">Environment </p> <app-edit class="text-base" type="text"
+        [(value)]="project.environment"></app-edit>
+      <p class="jobDetailsName">Framework </p> <app-edit class="text-base" type="text"
+        [(value)]="project.framework"></app-edit>
+      <p class="jobDetailsName">Buildtools </p> <app-edit class="text-base" type="text"
+        [(value)]="project.buildtools"></app-edit>
+      <p class="jobDetailsName">Coding Language </p> <app-edit class="text-base" type="text"
+        [(value)]="project.language"></app-edit>
+      <p class="jobDetailsName">Operating System </p> <app-edit class="text-base" type="text"
+        [(value)]="project.os"></app-edit>
     </div>
 
     @for(key of getProjectTitles(project); track key){
@@ -68,21 +76,3 @@
     </button>
   </div>
 </section>
-
-<!-- <table class="table-auto w-full">
-  <tbody class="text-sm">
-    <tr >
-      <td class="text-right p-2">Formale Sprachen</td> 
-      <td class="p-2">
-        TypeScript, JavaScript, Kotlin, Java, Go, Python, Shell Scripting, CSS,
-        SASS
-      </td>
-    </tr>
-    <tr>
-      <td class="text-right p-2">Frameworks</td>
-      <td class="p-2">
-        Angular, Vue, React, Spring Boot, Express, Hibernate, Flyway
-      </td>
-    </tr>
-  </tbody>
-</table> -->
