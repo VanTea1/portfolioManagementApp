@@ -1,0 +1,22 @@
+.minor-section-title {
+  font-size: 19px;
+  margin-top: 10px;
+  font-weight: 550;
+}
+
+.details {
+  display: grid;
+  position: relative;
+  grid-template-columns: max-content 1fr;
+  gap: 4px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+
+.category {
+  font-weight: bold;
+}
+
+.hover-trigger:hover .delete-button {
+  display: block;
+}
