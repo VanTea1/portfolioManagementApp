@@ -6,6 +6,8 @@
           [inputWidth]="userName.length * 10"></app-edit>
         <app-edit class="text-base w-auto max-w-full position" type="text" [(value)]="position"
           [inputWidth]="position.length * 9"></app-edit>
+          <app-edit class="text-base w-auto max-w-full description" type="text" [(value)]="description"
+          [inputWidth]="position.length * 9"></app-edit>
       </div>
 
       <div *ngFor="let info of baseInfo" class="details hover-trigger">

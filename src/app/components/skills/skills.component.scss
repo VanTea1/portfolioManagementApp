@@ -12,6 +12,7 @@
   max-width: 300px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: visible;
 }
 
 .skill-name-container:hover .delete-button {
@@ -36,4 +37,5 @@
 
 .delete-button {
   @apply hidden;
+
 }
