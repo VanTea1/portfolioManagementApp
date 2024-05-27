@@ -27,15 +27,10 @@
   @apply flex space-x-1;
 }
 
-.label input:checked ~ .checkmark {
-  @apply bg-slate-500 rounded-full w-2 h-2;
-}
-
 .checked ~ .checkmark {
   @apply bg-slate-500 rounded-full w-2 h-2;
 }
 
 .delete-button {
   @apply hidden;
-
 }
