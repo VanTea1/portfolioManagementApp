@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { EditComponent } from "../edit/edit.component";
 import { IKnowledge } from '../../models/Knowledge';
 import { NgClass, NgFor } from '@angular/common';
-
+import { SkillInheritService } from '../../skill-inherit.service';
 @Component({
     selector: 'app-it-knowledge',
     standalone: true,
@@ -12,6 +12,9 @@ import { NgClass, NgFor } from '@angular/common';
 })
 export class ItKnowledgeComponent {
       
+  constructor(private SkillInheritService: SkillInheritService){
+    this.SkillInheritService.setKnowledge(this.knowledge);
+  }
        knowledge: IKnowledge[] = [
         { index: 0, category: 'Frameworks', items: 'Angular' },
         { index: 1, category: 'Databases', items: 'mySQL' },
@@ -25,11 +28,14 @@ export class ItKnowledgeComponent {
       addKnowledge() {
         const newIndex = this.knowledge.length; 
         this.knowledge.push({ index: newIndex, category: 'New Category', items: 'New Item' });
+        this.SkillInheritService.setKnowledge(this.knowledge);
       }
+      
     
       deleteKnowledge(index: number) {
         this.knowledge.splice(index, 1);
         this.knowledge.forEach((item, i) => item.index = i);
+        this.SkillInheritService.setKnowledge(this.knowledge);
       }
 }
 
