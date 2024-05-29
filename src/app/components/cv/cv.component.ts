@@ -14,6 +14,7 @@ import { ExportComponent } from '../export/export.component';
 import { ItKnowledgeComponent } from '../it-knowledge/it-knowledge.component';
 import { LinkedinCallbackComponent } from '../linkedin-callback/linkedin-callback.component';
 import { OtherSkillsCategoryComponent } from '../other-skills-category/other-skills-category.component';
+import { ExportContentComponent } from '../export-content/export-content.component';
 @Component({
   selector: 'app-cv',
   standalone: true,
@@ -28,6 +29,7 @@ import { OtherSkillsCategoryComponent } from '../other-skills-category/other-ski
     ItKnowledgeComponent,
     LinkedinCallbackComponent,
     OtherSkillsCategoryComponent,
+    ExportContentComponent,
   ],
 })
 export class CVComponent implements AfterViewInit {

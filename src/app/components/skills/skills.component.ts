@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, KeyValueDiffers } from '@angular/core';
 import { EditComponent } from '../edit/edit.component';
 import { ISkill } from '../../models/Skill';
 import { NgClass, NgFor } from '@angular/common';
+import { ExportTransportService } from '../../export-transport.service';
 
 @Component({
   selector: 'app-skills',
@@ -34,6 +35,26 @@ export class SkillsComponent {
     },
   ];
 
+  private differ: any = this.differs.find(this).create();
+
+  constructor(
+    private transportUserDataService: ExportTransportService,
+    private differs: KeyValueDiffers
+  ) {}
+
+  ngOnInit() {
+    this.transportUserDataService.setSkills(this.skills);
+  }
+
+  ngDoCheck() {
+    const changes = this.differ.diff(this);
+    if (changes) {
+      changes.forEachChangedItem((record: any) => {
+        this.transportUserDataService.setSkills(this.skills);
+      });
+    }
+  }
+
   addSkill() {
     this.skills.push({
       name: 'new skill',
@@ -55,8 +76,5 @@ export class SkillsComponent {
     ) {
       this.skills[skillIndex].level[i] = false;
     }
-    console.log('====================================');
-    console.log(this.skills[skillIndex]);
-    console.log('====================================');
   }
 }
