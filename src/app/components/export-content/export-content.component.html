@@ -1,0 +1,127 @@
+<div class="cv">
+    <section class="base-info">
+        <div class="flex justify-around">
+            <div class="flex flex-col gap-3 max-w-[70%]">
+                <div class="text-xl font-bold max-w-full" type="text">
+                    {{ userData.userName }}
+                </div>
+                <div class="text-base w-auto max-w-full" type="text">
+                    {{ userData.position }}
+                </div>
+
+                <div class="text-base w-auto max-w-full" type="text">
+                    {{ userData.description }}
+                </div>
+            </div>
+            @if(userData.avatarUrl){
+
+            <div class="flex flex-col gap-2 justify-center items-center">
+                <div class="change-btn justify-center items-center">
+                    <img class="w-28 h-28 border p-1" [src]="userData.avatarUrl" alt="userAvatar" />
+                </div>
+            </div>
+            }@else {
+            <div class="w-32"></div>
+            }
+        </div>
+        <div *ngFor="let info of userData.baseInfo" class="details hover-trigger">
+            <div class="category" type="text">{{info.category}}
+            </div>
+            <div class="text-base w-auto max-w-full" type="text">{{info.value}}
+            </div>
+        </div>
+        <ul class="flex justify-around mt-2 gap-3 text-sm contacts-wrapper">
+            <li class="flex items-center gap-1">
+                <img src="../../../assets/mail.png" class="imgs">
+                <div class="text-base w-auto">{{ userData.userInfo.mail }}</div>
+            </li>
+            <li class="flex items-center gap-1">
+                <img src="../../../assets/mobile.png" class="imgs">
+                <div class="text-base w-auto">{{ userData.userInfo.tel }}</div>
+            </li>
+            <li class="flex items-center gap-1">
+                <img src="../../../assets/location.png" class="imgs">
+                <div class="text-base w-auto">{{ userData.userInfo.address }}</div>
+            </li>
+            <li class="flex items-center gap-1">
+                <img src="../../../assets/linkedin.png" class="imgs">
+                <div class="text-base w-auto">{{ userData.userInfo.linkedIn }}</div>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<div class="section">
+    <div class="section-title">Skills</div>
+    <section class="skills-section max-w-[50%]">
+        <div *ngFor="let skill of userData.skills; let idxSkill = index"
+            class="skill flex justify-between items-center">
+            <div class="relative">
+                <div class="relative text-base w-auto max-w-[50%]">
+                    {{ skill.name }}
+                </div>
+            </div>
+            <div class="flex space-x-1">
+                <div *ngFor="let lvl of skill.level; let idxLvl = index">
+                    <div [ngClass]="{ checked: lvl }"
+                        class="label flex w-4 h-4 border-2 rounded-full border-purple-500 items-center justify-center">
+                        <div class="checkmark"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="section">
+    <div class="section-title">Projects</div>
+    <section class="projects-section flex flex-col gap-4 min-h-5 max-w-[50%]">
+        @for(project of userData.projects; track $index){
+        <div class="flex flex-col gap-2">
+            <div class="text-xl">{{project.title}}</div>
+            <div class="text-base" type="text">{{project.description}}</div>
+            <div class="projectHeaderDetails">
+                <p class="jobDetailsName">Industry </p>
+                <div class="text-base" type="text">{{project.industry}}</div>
+                <p class="jobDetailsName">Time period </p>
+                <div class="text-base" type="text">{{project.timeperiod}}</div>
+                <p class="jobDetailsName">Teamsize </p>
+                <div class="text-base" type="text">{{project.teamsize}}</div>
+                <p class="jobDetailsName">Role </p>
+                <div class="text-base" type="text">{{project.role}}</div>
+            </div>
+        </div>
+        <p class="techDetails">Technical Environment</p>
+        <div class="jobDetails">
+
+            <p class="jobDetailsName">Tasks </p>
+            <div class="text-base" type="text">{{project.tasks}}</div>
+            <p class="jobDetailsName">Environment </p>
+            <div class="text-base" type="text">{{project.environment}}</div>
+            <p class="jobDetailsName">Framework </p>
+            <div class="text-base" type="text">{{project.framework}}</div>
+            <p class="jobDetailsName">Buildtools </p>
+            <div class="text-base" type="text">{{project.buildtools}}</div>
+            <p class="jobDetailsName">Coding Language </p>
+            <div class="text-base" type="text">{{project.language}}</div>
+            <p class="jobDetailsName">Operating System </p>
+            <div class="text-base" type="text">{{project.os}}</div>
+        </div>
+        @for(key of getProjectTitles(project); track key){
+        <table class="relative ml-10 table-auto w-full">
+            <tbody class="text-sm">
+                <tr>
+                    <td class="text-right max-w-40">
+                        <div class="text-right text-base w-auto" type="text">{{project[key][0]}}</div>
+                    </td>
+                    <td class="pl-4">
+                        <div class="text-base w-auto max-w-96" type="text">{{project[key][1]}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        }
+
+        }
+    </section>
+</div>
