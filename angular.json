@@ -65,7 +65,8 @@
               "buildTarget": "portfolioManagementApp:build:production"
             },
             "development": {
-              "buildTarget": "portfolioManagementApp:build:development"
+              "buildTarget": "portfolioManagementApp:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

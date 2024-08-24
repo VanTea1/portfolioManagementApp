@@ -38,7 +38,10 @@ export class CVComponent implements AfterViewInit {
   @Output() exportCV = new EventEmitter<void>();
 
   clientId = '783sd9od1azet2';
-  redirectUri = 'http://localhost:4200/auth/linkedin/callback';
+  client_secret = 'WPL_AP0.6EQ2kDPT1n5nU4mU.MjczOTE2ODA3MA==';
+  redirectUri = 'http://localhost:4200/callback';
+  scope = 'profile email';
+  response_type = 'code';
 
   constructor(private elementRef: ElementRef) {}
 
@@ -56,7 +59,7 @@ export class CVComponent implements AfterViewInit {
   }
 
   loginWithLinkedIn() {
-    const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${this.clientId}&redirect_uri=${this.redirectUri}&scope=liteprofile%20emailaddress%20w_member_social`;
+    const authUrl = `https://www.linkedin.com/oauth/v2/authorization?client_id=${this.clientId}&client_secret=${this.client_secret}&redirect_uri=${this.redirectUri}&scope=${this.scope}&response_type=${this.response_type}`;
     window.location.href = authUrl;
   }
 }
