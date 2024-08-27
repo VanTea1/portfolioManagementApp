@@ -40,7 +40,7 @@ export class CVComponent implements AfterViewInit {
   clientId = '783sd9od1azet2';
   client_secret = 'WPL_AP0.6EQ2kDPT1n5nU4mU.MjczOTE2ODA3MA==';
   redirectUri = 'http://localhost:4200/callback';
-  scope = 'profile email';
+  scope = 'profile email openid';
   response_type = 'code';
 
   constructor(private elementRef: ElementRef) {}
