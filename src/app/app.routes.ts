@@ -8,5 +8,5 @@ export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'cv', component: CVComponent },
-      { path: 'auth/linkedin/callback', component: LinkedinCallbackComponent }
+      { path: 'callback', component: LinkedinCallbackComponent }
 ];
