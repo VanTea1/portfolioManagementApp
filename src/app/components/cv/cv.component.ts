@@ -15,6 +15,8 @@ import { ItKnowledgeComponent } from '../it-knowledge/it-knowledge.component';
 import { LinkedinCallbackComponent } from '../linkedin-callback/linkedin-callback.component';
 import { OtherSkillsCategoryComponent } from '../other-skills-category/other-skills-category.component';
 import { ExportContentComponent } from '../export-content/export-content.component';
+import { ScraperService } from '../../scraper.service';
+
 @Component({
   selector: 'app-cv',
   standalone: true,
@@ -43,7 +45,9 @@ export class CVComponent implements AfterViewInit {
   scope = 'profile email openid';
   response_type = 'code';
 
-  constructor(private elementRef: ElementRef) {}
+  contactData: string = '';
+
+  constructor(private elementRef: ElementRef, private scraperService: ScraperService) {}
 
   ngAfterViewInit() {
     const exportContentElement: HTMLElement =
@@ -62,4 +66,22 @@ export class CVComponent implements AfterViewInit {
     const authUrl = `https://www.linkedin.com/oauth/v2/authorization?client_id=${this.clientId}&client_secret=${this.client_secret}&redirect_uri=${this.redirectUri}&scope=${this.scope}&response_type=${this.response_type}`;
     window.location.href = authUrl;
   }
+
+  scrapData() {
+    this.scraperService.getContactData().subscribe({
+      next: (data) => {
+        this.contactData = data.contactData;
+        console.log('====================================');
+        console.log(data);
+        console.log('====================================');
+      },
+      error: (err) => {
+        console.error('Ошибка при получении данных:', err);
+      },
+      complete: () => {
+        console.log('Запрос завершен.');
+      }
+  });
+  }
 }
+
