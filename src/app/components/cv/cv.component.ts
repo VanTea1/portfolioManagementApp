@@ -76,10 +76,10 @@ export class CVComponent implements AfterViewInit {
         console.log('====================================');
       },
       error: (err) => {
-        console.error('Ошибка при получении данных:', err);
+        console.error('Error during data fetching:', err);
       },
       complete: () => {
-        console.log('Запрос завершен.');
+        console.log('Complete!!!');
       }
   });
   }
